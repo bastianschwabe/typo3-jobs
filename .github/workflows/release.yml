@@ -39,7 +39,7 @@ jobs:
           grep -q "\"version\": \"${version}\"" composer.json || { echo "composer.json does not carry ${version}"; fail=1; }
           grep -q "release=\"${version}\"" Documentation/guides.xml || { echo "Documentation/guides.xml does not carry ${version}"; fail=1; }
           # The TER rejects an ext_emconf.php that contains declare(strict_types=1).
-          if grep -q "declare(" ext_emconf.php; then echo "ext_emconf.php must not contain a declare() statement"; fail=1; fi
+          if grep -Eq '^[[:space:]]*declare[[:space:]]*\(' ext_emconf.php; then echo "ext_emconf.php must not contain a declare() statement"; fail=1; fi
           exit $fail
 
       - name: Read the upload comment from the tag message
