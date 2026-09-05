@@ -1,0 +1,4 @@
+name: bastianschwabe/jobs
+dependencies:
+  # lib.contentElement, which every Extbase plugin renders through.
+  - typo3/fluid-styled-content

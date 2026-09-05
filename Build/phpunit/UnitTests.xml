@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.3/phpunit.xsd"
+         backupGlobals="true"
+         bootstrap="UnitTestsBootstrap.php"
+         cacheDirectory="../../.phpunit.cache"
+         colors="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         failOnDeprecation="true"
+         failOnNotice="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         requireCoverageMetadata="false"
+>
+    <testsuites>
+        <testsuite name="jobs unit tests">
+            <directory>../../Tests/Unit/</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>../../Classes/</directory>
+        </include>
+    </source>
+</phpunit>

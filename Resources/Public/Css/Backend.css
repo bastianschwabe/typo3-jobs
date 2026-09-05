@@ -1,0 +1,116 @@
+/*
+ * Backend styles for the Jobs modules and the dashboard widget.
+ *
+ * Colours come from TYPO3's own CSS custom properties so light and dark
+ * mode both work; every var() carries a fallback for older backends.
+ */
+
+.jobs-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.jobs-table__views {
+    text-decoration: none;
+}
+
+/* Tracking switched off in the extension configuration: content stays
+   visible for orientation but is greyed out and not interactive. */
+.jobs-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+    user-select: none;
+    filter: grayscale(1);
+}
+
+.jobs-table__row--highlight > td {
+    background-color: var(--typo3-state-info-bg, #d9edf7);
+    box-shadow: inset 3px 0 0 var(--typo3-state-info-border-color, #0078e6);
+}
+
+/* Two charts side by side, stacked on narrow screens and inside widgets. */
+.jobs-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.widget-content-main .jobs-charts {
+    margin-bottom: 0;
+    gap: 1rem;
+}
+
+.jobs-chart {
+    padding: 1rem;
+    border: 1px solid var(--typo3-component-border-color, #d0d0d0);
+    border-radius: var(--typo3-component-border-radius, 0.25rem);
+    background: var(--typo3-component-bg, #fff);
+    color: var(--typo3-component-color, inherit);
+}
+
+.widget-content-main .jobs-chart {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.jobs-chart__title {
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.jobs-chart__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.jobs-chart__row {
+    display: grid;
+    grid-template-columns: minmax(0, 11rem) 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.jobs-chart__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.875rem;
+}
+
+.jobs-chart__track {
+    display: block;
+    height: 0.875rem;
+    border-radius: 2px;
+    background: var(--typo3-component-border-color, #e5e5e5);
+    overflow: hidden;
+}
+
+.jobs-chart__bar {
+    display: block;
+    height: 100%;
+    min-width: 2px;
+    background: var(--typo3-state-primary-bg, #0078e6);
+    transition: width 200ms ease-out;
+}
+
+.jobs-chart__value {
+    min-width: 2.5rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.jobs-chart__empty {
+    margin: 0;
+    font-size: 0.875rem;
+}

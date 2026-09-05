@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Configuration/Sets/Jobs/labels.xlf" date="2026-08-21T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="label">
+        <source>Jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="categories.jobs">
+        <source>Jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="categories.jobs.view">
+        <source>Display</source>
+        <target>Darstellung</target>
+      </trans-unit>
+      <trans-unit id="categories.jobs.schema">
+        <source>Structured data</source>
+        <target>Strukturierte Daten</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.storagePid">
+        <source>Storage folder</source>
+        <target>Speicherordner</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.storagePid">
+        <source>Comma separated page IDs the job records are stored on.</source>
+        <target>Kommaseparierte Seiten-IDs, auf denen die Job-Datensätze liegen.</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.detailPid">
+        <source>Detail page</source>
+        <target>Detailseite</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.detailPid">
+        <source>Page containing the detail plugin. Used to link from the list.</source>
+        <target>Seite mit dem Detail-Plugin. Wird für die Verlinkung aus der Liste genutzt.</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.itemsPerPage">
+        <source>Jobs per page</source>
+        <target>Jobs pro Seite</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.name">
+        <source>Fallback organization name</source>
+        <target>Firmenname (Fallback)</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.organization.name">
+        <source>Used as hiringOrganization when a job has no company profile assigned. Google requires this property.</source>
+        <target>Wird als hiringOrganization genutzt, wenn einem Job kein Firmenprofil zugewiesen ist. Google verlangt diese Angabe.</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.url">
+        <source>Fallback organization URL</source>
+        <target>Firmen-URL (Fallback)</target>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.logo">
+        <source>Fallback organization logo URL</source>
+        <target>Logo-URL (Fallback)</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.organization.logo">
+        <source>Absolute URL of the company logo. Recommended by Google for the job listing.</source>
+        <target>Absolute URL des Firmenlogos. Von Google für die Stellenanzeige empfohlen.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

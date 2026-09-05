@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/locallang_backend.xlf" date="2026-09-05T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="list.filter.label">
+        <source>Filter by access state</source>
+      </trans-unit>
+      <trans-unit id="list.filter.all">
+        <source>All</source>
+      </trans-unit>
+      <trans-unit id="list.filter.active">
+        <source>Active</source>
+      </trans-unit>
+      <trans-unit id="list.filter.inactive">
+        <source>Inactive</source>
+      </trans-unit>
+      <trans-unit id="list.count">
+        <source>%s jobs</source>
+      </trans-unit>
+      <trans-unit id="list.column.title">
+        <source>Job</source>
+      </trans-unit>
+      <trans-unit id="list.column.identifier">
+        <source>Reference</source>
+      </trans-unit>
+      <trans-unit id="list.column.level">
+        <source>Level</source>
+      </trans-unit>
+      <trans-unit id="list.column.occupationalField">
+        <source>Field of work</source>
+      </trans-unit>
+      <trans-unit id="list.column.locations">
+        <source>Locations</source>
+      </trans-unit>
+      <trans-unit id="list.column.datePosted">
+        <source>Posted</source>
+      </trans-unit>
+      <trans-unit id="list.column.validThrough">
+        <source>Valid through</source>
+      </trans-unit>
+      <trans-unit id="list.column.status">
+        <source>Status</source>
+      </trans-unit>
+      <trans-unit id="list.column.views">
+        <source>Views</source>
+      </trans-unit>
+      <trans-unit id="list.status.active">
+        <source>Active</source>
+      </trans-unit>
+      <trans-unit id="list.status.hidden">
+        <source>Hidden</source>
+      </trans-unit>
+      <trans-unit id="list.status.scheduled">
+        <source>Scheduled</source>
+      </trans-unit>
+      <trans-unit id="list.status.ended">
+        <source>Ended</source>
+      </trans-unit>
+      <trans-unit id="list.status.expired">
+        <source>Expired</source>
+      </trans-unit>
+      <trans-unit id="list.edit">
+        <source>Edit job</source>
+      </trans-unit>
+      <trans-unit id="list.showStatistics">
+        <source>Show statistics</source>
+      </trans-unit>
+      <trans-unit id="list.empty.title">
+        <source>No jobs</source>
+      </trans-unit>
+      <trans-unit id="list.empty.all">
+        <source>There are no job records yet.</source>
+      </trans-unit>
+      <trans-unit id="list.empty.active">
+        <source>No job is currently active.</source>
+      </trans-unit>
+      <trans-unit id="list.empty.inactive">
+        <source>Every job is currently active.</source>
+      </trans-unit>
+      <trans-unit id="statistic.view.label">
+        <source>View</source>
+      </trans-unit>
+      <trans-unit id="statistic.view.jobs">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="statistic.view.filter">
+        <source>Filters</source>
+      </trans-unit>
+      <trans-unit id="statistic.view.functions">
+        <source>Functions</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.topViews">
+        <source>Top 5 by views</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.topApplies">
+        <source>Top 5 by applications</source>
+      </trans-unit>
+      <trans-unit id="statistic.chart.empty">
+        <source>No data yet.</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.job">
+        <source>Job</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.views">
+        <source>Views</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.sessions">
+        <source>Visitors</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.applies">
+        <source>Applications</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.completed">
+        <source>Completed</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.conversion">
+        <source>Conversion</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.deletedJob">
+        <source>Deleted job #%s</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.empty.title">
+        <source>No statistics yet</source>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.empty.message">
+        <source>Views and applications are recorded as soon as visitors open a job in the frontend.</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.intro">
+        <source>Every job list a visitor filtered is recorded with its filter values. Identical combinations are grouped; the count says how often the combination was used.</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.search">
+        <source>Search</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.level">
+        <source>Level</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.occupationalField">
+        <source>Field of work</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.location">
+        <source>Location</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.employmentType">
+        <source>Employment type</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.remote">
+        <source>Remote</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.count">
+        <source>Used</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.averageResults">
+        <source>Ø results</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.lastUsed">
+        <source>Last used</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.remoteOnly">
+        <source>Remote only</source>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.title">
+        <source>Statistics are disabled</source>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.message">
+        <source>Views, applications and filter usage are not being recorded. Enable "Enable statistics" in the extension configuration of "jobs" (Admin Tools &gt; Settings &gt; Extension Configuration) to collect data and use these views.</source>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.link">
+        <source>Open settings</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.empty.title">
+        <source>No filter statistics yet</source>
+      </trans-unit>
+      <trans-unit id="statistic.filter.empty.message">
+        <source>Filter usage is recorded as soon as visitors open the job list in the frontend.</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.title">
+        <source>Reset all statistics</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.subtitle">
+        <source>Views, applications and filter usage</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.description">
+        <source>Deletes every recorded view, application click and filter request. The job records themselves are not touched. This cannot be undone.</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.button">
+        <source>Reset all statistics</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.confirm">
+        <source>All recorded statistics will be deleted permanently. Continue?</source>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.done">
+        <source>All statistics have been reset.</source>
+      </trans-unit>
+      <trans-unit id="widget.group">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="widget.title">
+        <source>Job statistics</source>
+      </trans-unit>
+      <trans-unit id="widget.description">
+        <source>The five most viewed and the five most applied-to jobs.</source>
+      </trans-unit>
+      <trans-unit id="widget.link">
+        <source>Open statistics</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,52 @@
+rootPageId: 1
+base: /
+websiteTitle: 'TYPO3 Jobs — development instance'
+
+# Site sets replace the old static TypoScript includes. The test site set pulls
+# in EXT:jobs and fluid_styled_content through its own dependencies.
+dependencies:
+  - bastianschwabe/jobs-testsite
+
+languages:
+  - title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: gb
+    websiteTitle: 'TYPO3 Jobs — development instance'
+  - title: German
+    enabled: true
+    languageId: 1
+    base: /de/
+    locale: de_DE.UTF-8
+    navigationTitle: Deutsch
+    flag: de
+    websiteTitle: 'TYPO3 Jobs — Entwicklungsinstanz'
+    # Untranslated records stay visible in German, which is what makes the
+    # "Working Student" job a useful fallback test case.
+    fallbackType: fallback
+    fallbacks: '0'
+
+routeEnhancers:
+  JobsDetail:
+    type: Extbase
+    extension: Jobs
+    plugin: Show
+    routes:
+      - routePath: '/{job-slug}'
+        _controller: 'Job::show'
+        _arguments:
+          job-slug: job
+      # The tracking proxy in front of the application link.
+      - routePath: '/{job-slug}/apply'
+        _controller: 'Job::apply'
+        _arguments:
+          job-slug: job
+    defaultController: 'Job::show'
+    aspects:
+      job-slug:
+        type: PersistedAliasMapper
+        tableName: tx_jobs_domain_model_job
+        routeFieldName: slug

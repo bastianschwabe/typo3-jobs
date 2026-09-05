@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/locallang_backend.xlf" date="2026-09-05T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="list.filter.label">
+        <source>Filter by access state</source>
+        <target>Nach Zugriffsstatus filtern</target>
+      </trans-unit>
+      <trans-unit id="list.filter.all">
+        <source>All</source>
+        <target>Alle</target>
+      </trans-unit>
+      <trans-unit id="list.filter.active">
+        <source>Active</source>
+        <target>Aktiv</target>
+      </trans-unit>
+      <trans-unit id="list.filter.inactive">
+        <source>Inactive</source>
+        <target>Inaktiv</target>
+      </trans-unit>
+      <trans-unit id="list.count">
+        <source>%s jobs</source>
+        <target>%s Jobs</target>
+      </trans-unit>
+      <trans-unit id="list.column.title">
+        <source>Job</source>
+        <target>Job</target>
+      </trans-unit>
+      <trans-unit id="list.column.identifier">
+        <source>Reference</source>
+        <target>Kennung</target>
+      </trans-unit>
+      <trans-unit id="list.column.level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="list.column.occupationalField">
+        <source>Field of work</source>
+        <target>Berufsfeld</target>
+      </trans-unit>
+      <trans-unit id="list.column.locations">
+        <source>Locations</source>
+        <target>Standorte</target>
+      </trans-unit>
+      <trans-unit id="list.column.datePosted">
+        <source>Posted</source>
+        <target>Veröffentlicht</target>
+      </trans-unit>
+      <trans-unit id="list.column.validThrough">
+        <source>Valid through</source>
+        <target>Gültig bis</target>
+      </trans-unit>
+      <trans-unit id="list.column.status">
+        <source>Status</source>
+        <target>Status</target>
+      </trans-unit>
+      <trans-unit id="list.column.views">
+        <source>Views</source>
+        <target>Aufrufe</target>
+      </trans-unit>
+      <trans-unit id="list.status.active">
+        <source>Active</source>
+        <target>Aktiv</target>
+      </trans-unit>
+      <trans-unit id="list.status.hidden">
+        <source>Hidden</source>
+        <target>Verborgen</target>
+      </trans-unit>
+      <trans-unit id="list.status.scheduled">
+        <source>Scheduled</source>
+        <target>Geplant</target>
+      </trans-unit>
+      <trans-unit id="list.status.ended">
+        <source>Ended</source>
+        <target>Beendet</target>
+      </trans-unit>
+      <trans-unit id="list.status.expired">
+        <source>Expired</source>
+        <target>Abgelaufen</target>
+      </trans-unit>
+      <trans-unit id="list.edit">
+        <source>Edit job</source>
+        <target>Job bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="list.showStatistics">
+        <source>Show statistics</source>
+        <target>Statistik anzeigen</target>
+      </trans-unit>
+      <trans-unit id="list.empty.title">
+        <source>No jobs</source>
+        <target>Keine Jobs</target>
+      </trans-unit>
+      <trans-unit id="list.empty.all">
+        <source>There are no job records yet.</source>
+        <target>Es gibt noch keine Job-Datensätze.</target>
+      </trans-unit>
+      <trans-unit id="list.empty.active">
+        <source>No job is currently active.</source>
+        <target>Derzeit ist kein Job aktiv.</target>
+      </trans-unit>
+      <trans-unit id="list.empty.inactive">
+        <source>Every job is currently active.</source>
+        <target>Derzeit sind alle Jobs aktiv.</target>
+      </trans-unit>
+      <trans-unit id="statistic.view.label">
+        <source>View</source>
+        <target>Ansicht</target>
+      </trans-unit>
+      <trans-unit id="statistic.view.jobs">
+        <source>Jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="statistic.view.filter">
+        <source>Filters</source>
+        <target>Filter</target>
+      </trans-unit>
+      <trans-unit id="statistic.view.functions">
+        <source>Functions</source>
+        <target>Funktionen</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.topViews">
+        <source>Top 5 by views</source>
+        <target>Top 5 nach Aufrufen</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.topApplies">
+        <source>Top 5 by applications</source>
+        <target>Top 5 nach Bewerbungen</target>
+      </trans-unit>
+      <trans-unit id="statistic.chart.empty">
+        <source>No data yet.</source>
+        <target>Noch keine Daten.</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.job">
+        <source>Job</source>
+        <target>Job</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.views">
+        <source>Views</source>
+        <target>Aufrufe</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.sessions">
+        <source>Visitors</source>
+        <target>Besucher</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.applies">
+        <source>Applications</source>
+        <target>Bewerbungen</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.completed">
+        <source>Completed</source>
+        <target>Abgeschlossen</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.column.conversion">
+        <source>Conversion</source>
+        <target>Konversion</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.deletedJob">
+        <source>Deleted job #%s</source>
+        <target>Gelöschter Job #%s</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.empty.title">
+        <source>No statistics yet</source>
+        <target>Noch keine Statistik</target>
+      </trans-unit>
+      <trans-unit id="statistic.jobs.empty.message">
+        <source>Views and applications are recorded as soon as visitors open a job in the frontend.</source>
+        <target>Aufrufe und Bewerbungen werden erfasst, sobald Besucher im Frontend einen Job öffnen.</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.intro">
+        <source>Every job list a visitor filtered is recorded with its filter values. Identical combinations are grouped; the count says how often the combination was used.</source>
+        <target>Jede von Besuchern gefilterte Jobliste wird mit ihren Filterwerten erfasst. Identische Kombinationen werden zusammengefasst; der Zähler sagt, wie oft die Kombination genutzt wurde.</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.search">
+        <source>Search</source>
+        <target>Suche</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.occupationalField">
+        <source>Field of work</source>
+        <target>Berufsfeld</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.location">
+        <source>Location</source>
+        <target>Standort</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.employmentType">
+        <source>Employment type</source>
+        <target>Beschäftigungsart</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.remote">
+        <source>Remote</source>
+        <target>Remote</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.count">
+        <source>Used</source>
+        <target>Genutzt</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.averageResults">
+        <source>Ø results</source>
+        <target>Ø Treffer</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.column.lastUsed">
+        <source>Last used</source>
+        <target>Zuletzt genutzt</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.remoteOnly">
+        <source>Remote only</source>
+        <target>Nur Remote</target>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.title">
+        <source>Statistics are disabled</source>
+        <target>Statistiken sind deaktiviert</target>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.message">
+        <source>Views, applications and filter usage are not being recorded. Enable "Enable statistics" in the extension configuration of "jobs" (Admin Tools &gt; Settings &gt; Extension Configuration) to collect data and use these views.</source>
+        <target>Aufrufe, Bewerbungen und Filternutzung werden nicht erfasst. Aktiviere „Statistiken aktivieren“ in der Extension-Konfiguration von „jobs“ (Admin Tools &gt; Settings &gt; Extension Configuration), um Daten zu sammeln und diese Ansichten zu nutzen.</target>
+      </trans-unit>
+      <trans-unit id="tracking.disabled.link">
+        <source>Open settings</source>
+        <target>Einstellungen öffnen</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.empty.title">
+        <source>No filter statistics yet</source>
+        <target>Noch keine Filterstatistik</target>
+      </trans-unit>
+      <trans-unit id="statistic.filter.empty.message">
+        <source>Filter usage is recorded as soon as visitors open the job list in the frontend.</source>
+        <target>Die Filternutzung wird erfasst, sobald Besucher im Frontend die Jobliste öffnen.</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.title">
+        <source>Reset all statistics</source>
+        <target>Alle Statistiken zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.subtitle">
+        <source>Views, applications and filter usage</source>
+        <target>Aufrufe, Bewerbungen und Filternutzung</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.description">
+        <source>Deletes every recorded view, application click and filter request. The job records themselves are not touched. This cannot be undone.</source>
+        <target>Löscht alle erfassten Aufrufe, Bewerbungsklicks und Filteranfragen. Die Job-Datensätze selbst bleiben unberührt. Dies kann nicht rückgängig gemacht werden.</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.button">
+        <source>Reset all statistics</source>
+        <target>Alle Statistiken zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.confirm">
+        <source>All recorded statistics will be deleted permanently. Continue?</source>
+        <target>Alle erfassten Statistiken werden dauerhaft gelöscht. Fortfahren?</target>
+      </trans-unit>
+      <trans-unit id="statistic.functions.reset.done">
+        <source>All statistics have been reset.</source>
+        <target>Alle Statistiken wurden zurückgesetzt.</target>
+      </trans-unit>
+      <trans-unit id="widget.group">
+        <source>Jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="widget.title">
+        <source>Job statistics</source>
+        <target>Job-Statistik</target>
+      </trans-unit>
+      <trans-unit id="widget.description">
+        <source>The five most viewed and the five most applied-to jobs.</source>
+        <target>Die fünf meistaufgerufenen und die fünf meistbeworbenen Jobs.</target>
+      </trans-unit>
+      <trans-unit id="widget.link">
+        <source>Open statistics</source>
+        <target>Statistik öffnen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  BastianSchwabe\Jobs\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/Domain/Model/*'
+      - '../Classes/Domain/Dto/*'
+      - '../Classes/Domain/Statistic/*'
+      - '../Classes/Enum/*'
+      # Depends on EXT:dashboard; registered conditionally in Services.php.
+      - '../Classes/Widgets/*'
+
+  # Resolved through GeneralUtility::makeInstance() by FormEngine's
+  # itemsProcFunc, which only sees public services.
+  BastianSchwabe\Jobs\Tca\CountryItemsProvider:
+    public: true

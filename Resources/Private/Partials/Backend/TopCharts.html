@@ -1,0 +1,18 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    The two "top 5" charts side by side. Argument: charts (views, applies).
+</f:comment>
+<div class="jobs-charts">
+    <f:render partial="Backend/BarChart" arguments="{
+        title: '{f:translate(key: \'statistic.jobs.topViews\', domain: \'jobs.backend\')}',
+        items: charts.views
+    }" />
+    <f:render partial="Backend/BarChart" arguments="{
+        title: '{f:translate(key: \'statistic.jobs.topApplies\', domain: \'jobs.backend\')}',
+        items: charts.applies
+    }" />
+</div>
+
+</html>

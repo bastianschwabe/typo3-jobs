@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/Modules/statistics.xlf" date="2026-09-05T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Statistics</source>
+      </trans-unit>
+      <trans-unit id="short_description">
+        <source>Views, applications and filter usage</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Shows how often each job was viewed and applied to, which filter combinations visitors use, and lets you reset the collected data.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

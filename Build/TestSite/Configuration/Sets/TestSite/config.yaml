@@ -1,0 +1,5 @@
+name: bastianschwabe/jobs-testsite
+label: 'Jobs test site'
+dependencies:
+  - bastianschwabe/jobs
+  - typo3/fluid-styled-content

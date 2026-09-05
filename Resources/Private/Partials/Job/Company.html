@@ -1,0 +1,26 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="job-company">
+    <f:if condition="{company.logo}">
+        <f:image image="{company.logo}" maxWidth="320" loading="lazy"
+                 alt="{company.title}" class="job-company__logo" />
+    </f:if>
+
+    <p class="job-company__title">{company.title}</p>
+    <f:if condition="{company.teaser}">
+        <p class="job-company__teaser">{company.teaser}</p>
+    </f:if>
+    <f:if condition="{company.description}">
+        <div class="job-company__description">
+            <f:format.html>{company.description}</f:format.html>
+        </div>
+    </f:if>
+    <f:if condition="{company.urlWebsite}">
+        <p class="job-company__website">
+            <f:link.typolink parameter="{company.urlWebsite}">{company.title}</f:link.typolink>
+        </p>
+    </f:if>
+</div>
+
+</html>

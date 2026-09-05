@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>jobs.db:flexform.sheet.general</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.listPid>
+                        <label>jobs.db:flexform.listPid</label>
+                        <description>jobs.db:flexform.listPid.description</description>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                        </config>
+                    </settings.listPid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

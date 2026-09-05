@@ -1,0 +1,36 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    Horizontal bar chart without any JavaScript: one grid row per item, the
+    bar is a div scaled by "percent". Used by the statistics module and the
+    dashboard widget alike, so it only relies on Backend.css.
+
+    Arguments: title (string), items (list of uid, label, value, percent).
+</f:comment>
+<div class="jobs-chart">
+    <h3 class="jobs-chart__title">{title}</h3>
+    <f:if condition="{items}">
+        <f:then>
+            <ol class="jobs-chart__list">
+                <f:for each="{items}" as="item">
+                    <li class="jobs-chart__row">
+                        <span class="jobs-chart__label" title="{item.label}">
+                            <f:if condition="{item.label}">
+                                <f:then>{item.label}</f:then>
+                                <f:else><f:translate key="statistic.jobs.deletedJob" domain="jobs.backend" arguments="{0: item.uid}" /></f:else>
+                            </f:if>
+                        </span>
+                        <span class="jobs-chart__track"><span class="jobs-chart__bar" style="width: {item.percent}%"></span></span>
+                        <span class="jobs-chart__value">{item.value}</span>
+                    </li>
+                </f:for>
+            </ol>
+        </f:then>
+        <f:else>
+            <p class="jobs-chart__empty text-body-secondary"><f:translate key="statistic.chart.empty" domain="jobs.backend" /></p>
+        </f:else>
+    </f:if>
+</div>
+
+</html>

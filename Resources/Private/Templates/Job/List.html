@@ -1,0 +1,43 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="jobs-list">
+        <f:render partial="Job/Filter" arguments="{
+            demand: demand,
+            levels: levels,
+            occupationalFields: occupationalFields,
+            locations: locations,
+            employmentTypes: employmentTypes
+        }" />
+
+        <f:if condition="{jobs}">
+            <f:then>
+                <p class="jobs-list__count">
+                    <f:translate key="list.results" domain="jobs.messages"
+                                 arguments="{0: totalJobs}" />
+                </p>
+
+                <ul class="jobs-list__items">
+                    <f:for each="{jobs}" as="job">
+                        <li class="jobs-list__item">
+                            <f:render partial="Job/ListItem" arguments="{job: job}" />
+                        </li>
+                    </f:for>
+                </ul>
+
+                <f:render partial="Pagination"
+                          arguments="{pagination: pagination, paginator: paginator, demand: demand}" />
+            </f:then>
+            <f:else>
+                <p class="jobs-list__empty">
+                    <f:translate key="list.empty" domain="jobs.messages" />
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

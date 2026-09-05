@@ -1,0 +1,41 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:variable name="demandArguments" value="{
+    level: demand.level,
+    occupationalField: demand.occupationalField,
+    location: demand.location,
+    employmentType: demand.employmentType,
+    remoteOnly: demand.remoteOnly,
+    search: demand.search
+}" />
+
+<f:if condition="{pagination.lastPageNumber} > 1">
+    <nav class="jobs-pagination" aria-label="Pagination">
+        <ul>
+            <f:if condition="{pagination.previousPageNumber}">
+                <li>
+                    <f:link.action action="list" rel="prev"
+                                   arguments="{currentPage: pagination.previousPageNumber, demand: demandArguments}">&laquo;</f:link.action>
+                </li>
+            </f:if>
+
+            <f:for each="{pagination.allPageNumbers}" as="page">
+                <li>
+                    <f:link.action action="list"
+                                   arguments="{currentPage: page, demand: demandArguments}"
+                                   aria-current="{f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'page')}">{page}</f:link.action>
+                </li>
+            </f:for>
+
+            <f:if condition="{pagination.nextPageNumber}">
+                <li>
+                    <f:link.action action="list" rel="next"
+                                   arguments="{currentPage: pagination.nextPageNumber, demand: demandArguments}">&raquo;</f:link.action>
+                </li>
+            </f:if>
+        </ul>
+    </nav>
+</f:if>
+
+</html>

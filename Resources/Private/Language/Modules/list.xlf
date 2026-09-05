@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/Modules/list.xlf" date="2026-09-05T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="short_description">
+        <source>All job postings at a glance</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Lists every job posting with its classification, access state and view count, regardless of the page it is stored on.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

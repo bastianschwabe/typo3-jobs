@@ -1,0 +1,61 @@
+#!/bin/bash
+
+## Description: Rebuild the TYPO3 development instance from scratch: database, schema, demo pages, plugins and job records
+## Usage: typo3-install
+## Example: "ddev typo3-install"
+
+set -eu
+
+ADMIN_USER="test"
+ADMIN_PASSWORD="test"
+ADMIN_EMAIL="test@example.org"
+
+cd /var/www/html
+
+echo "==> Installing Composer dependencies"
+composer install --no-interaction --no-progress
+
+echo "==> Dropping and recreating the database"
+mysql -h db -u root -proot -e "DROP DATABASE IF EXISTS db; CREATE DATABASE db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL ON db.* TO 'db'@'%';"
+
+echo "==> Clearing generated state"
+# The TYPO3 cache identifier does not track TCA file contents, so a stale
+# var/cache would make the seed run against the previous schema.
+rm -rf var/cache/*
+rm -f config/system/settings.php
+
+echo "==> Setting up TYPO3"
+# No --create-site: the site configuration in config/sites/main is committed.
+.Build/bin/typo3 setup \
+    --no-interaction \
+    --force \
+    --driver=mysqli \
+    --host=db \
+    --port=3306 \
+    --dbname=db \
+    --username=db \
+    --password=db \
+    --admin-username="${ADMIN_USER}" \
+    --admin-user-password="${ADMIN_PASSWORD}" \
+    --admin-email="${ADMIN_EMAIL}" \
+    --project-name="TYPO3 Jobs" \
+    --server-type=apache
+
+echo "==> Seeding demo content"
+.Build/bin/typo3 jobs:seed
+
+echo "==> Flushing caches"
+.Build/bin/typo3 cache:flush
+
+cat <<INFO
+
+Development instance ready.
+
+  Frontend (EN)   ${DDEV_PRIMARY_URL}/jobs
+  Frontend (DE)   ${DDEV_PRIMARY_URL}/de/stellenangebote
+  Backend         ${DDEV_PRIMARY_URL}/typo3
+  Login           ${ADMIN_USER} / ${ADMIN_PASSWORD}
+
+Take a snapshot to get back here quickly:  ddev snapshot --name jobs-clean
+Restore it later with:                     ddev snapshot restore jobs-clean
+INFO

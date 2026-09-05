@@ -1,0 +1,23 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Widget/Widget" />
+
+<f:section name="main">
+    <f:if condition="{trackingEnabled}">
+        <f:then>
+            <f:render partial="Backend/TopCharts" arguments="{charts: charts}" />
+        </f:then>
+        <f:else>
+            <f:render partial="Backend/DisabledNotice" arguments="{settingsUrl: settingsUrl}" />
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="footer">
+    <a href="{statisticsUrl}" class="widget-cta">
+        <f:translate key="widget.link" domain="jobs.backend" />
+    </a>
+</f:section>
+
+</html>

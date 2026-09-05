@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://typo3.org/schemas/docs/guides.xsd"
+        links-are-relative="true">
+    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+               project-home="https://github.com/bastianschwabe/typo3-jobs"
+               project-repository="https://github.com/bastianschwabe/typo3-jobs"
+               project-issues="https://github.com/bastianschwabe/typo3-jobs/issues"
+               edit-on-github="bastianschwabe/typo3-jobs"
+               edit-on-github-branch="main"
+               typo3-core-preferred="stable" />
+    <project title="Jobs" version="0.1" release="0.1.0" copyright="Bastian Schwabe" />
+    <inventory id="t3coreapi" url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/" />
+</guides>

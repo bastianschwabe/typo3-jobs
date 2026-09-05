@@ -1,0 +1,18 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    Shown above greyed-out content when tracking is switched off in the
+    extension configuration. Argument: settingsUrl (may be empty when the
+    Settings module is not available to the current user).
+</f:comment>
+<f:be.infobox state="1" title="{f:translate(key: 'tracking.disabled.title', domain: 'jobs.backend')}">
+    <p><f:translate key="tracking.disabled.message" domain="jobs.backend" /></p>
+    <f:if condition="{settingsUrl}">
+        <a href="{settingsUrl}" class="btn btn-default btn-sm">
+            <f:translate key="tracking.disabled.link" domain="jobs.backend" />
+        </a>
+    </f:if>
+</f:be.infobox>
+
+</html>

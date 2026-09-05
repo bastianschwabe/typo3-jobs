@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/locallang_db.xlf" date="2026-08-21T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="education_category.associate_degree">
+        <source>Associate degree</source>
+        <target>Fachschulabschluss</target>
+      </trans-unit>
+      <trans-unit id="education_category.bachelor_degree">
+        <source>Bachelor's degree</source>
+        <target>Bachelor</target>
+      </trans-unit>
+      <trans-unit id="education_category.high_school">
+        <source>Secondary school</source>
+        <target>Schulabschluss</target>
+      </trans-unit>
+      <trans-unit id="education_category.postgraduate_degree">
+        <source>Postgraduate degree</source>
+        <target>Master oder höher</target>
+      </trans-unit>
+      <trans-unit id="education_category.professional_certificate">
+        <source>Professional certificate</source>
+        <target>Berufsausbildung</target>
+      </trans-unit>
+      <trans-unit id="employment_type.CONTRACTOR">
+        <source>Contractor</source>
+        <target>Freiberuflich</target>
+      </trans-unit>
+      <trans-unit id="employment_type.FULL_TIME">
+        <source>Full-time</source>
+        <target>Vollzeit</target>
+      </trans-unit>
+      <trans-unit id="employment_type.INTERN">
+        <source>Internship</source>
+        <target>Praktikum</target>
+      </trans-unit>
+      <trans-unit id="employment_type.OTHER">
+        <source>Other</source>
+        <target>Sonstiges</target>
+      </trans-unit>
+      <trans-unit id="employment_type.PART_TIME">
+        <source>Part-time</source>
+        <target>Teilzeit</target>
+      </trans-unit>
+      <trans-unit id="employment_type.PER_DIEM">
+        <source>Per diem</source>
+        <target>Auf Tagesbasis</target>
+      </trans-unit>
+      <trans-unit id="employment_type.TEMPORARY">
+        <source>Temporary</source>
+        <target>Befristet</target>
+      </trans-unit>
+      <trans-unit id="employment_type.VOLUNTEER">
+        <source>Volunteer</source>
+        <target>Ehrenamtlich</target>
+      </trans-unit>
+      <trans-unit id="flexform.detailPid">
+        <source>Detail page</source>
+        <target>Detailseite</target>
+      </trans-unit>
+      <trans-unit id="flexform.detailPid.description">
+        <source>Overrides the detail page from the site settings.</source>
+        <target>Überschreibt die Detailseite aus den Site-Einstellungen.</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage">
+        <source>Jobs per page</source>
+        <target>Jobs pro Seite</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage.description">
+        <source>0 uses the value from the site settings.</source>
+        <target>0 übernimmt den Wert aus den Site-Einstellungen.</target>
+      </trans-unit>
+      <trans-unit id="flexform.listPid">
+        <source>List page</source>
+        <target>Listenseite</target>
+      </trans-unit>
+      <trans-unit id="flexform.listPid.description">
+        <source>Target of the back link.</source>
+        <target>Ziel des Zurück-Links.</target>
+      </trans-unit>
+      <trans-unit id="flexform.preselect.level">
+        <source>Restrict to level</source>
+        <target>Auf Level einschränken</target>
+      </trans-unit>
+      <trans-unit id="flexform.preselect.location">
+        <source>Restrict to location</source>
+        <target>Auf Standort einschränken</target>
+      </trans-unit>
+      <trans-unit id="flexform.preselect.occupationalField">
+        <source>Restrict to field of work</source>
+        <target>Auf Bereich einschränken</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.filters">
+        <source>Filters</source>
+        <target>Filter</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.general">
+        <source>General</source>
+        <target>Allgemein</target>
+      </trans-unit>
+      <trans-unit id="palette.address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="palette.application">
+        <source>Application</source>
+        <target>Bewerbung</target>
+      </trans-unit>
+      <trans-unit id="palette.classification">
+        <source>Classification</source>
+        <target>Einordnung</target>
+      </trans-unit>
+      <trans-unit id="palette.dates">
+        <source>Dates</source>
+        <target>Zeitraum</target>
+      </trans-unit>
+      <trans-unit id="palette.education">
+        <source>Education</source>
+        <target>Ausbildung</target>
+      </trans-unit>
+      <trans-unit id="palette.experience">
+        <source>Experience</source>
+        <target>Erfahrung</target>
+      </trans-unit>
+      <trans-unit id="palette.geo">
+        <source>Coordinates</source>
+        <target>Koordinaten</target>
+      </trans-unit>
+      <trans-unit id="palette.name">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="palette.organization">
+        <source>Organization</source>
+        <target>Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="palette.remote">
+        <source>Remote work</source>
+        <target>Remote-Arbeit</target>
+      </trans-unit>
+      <trans-unit id="palette.salary">
+        <source>Salary</source>
+        <target>Gehalt</target>
+      </trans-unit>
+      <trans-unit id="palette.urls">
+        <source>Links</source>
+        <target>Links</target>
+      </trans-unit>
+      <trans-unit id="plugin.list.description">
+        <source>Filterable list of job postings.</source>
+        <target>Filterbare Liste der Stellenanzeigen.</target>
+      </trans-unit>
+      <trans-unit id="plugin.list.title">
+        <source>Jobs: List</source>
+        <target>Jobs: Liste</target>
+      </trans-unit>
+      <trans-unit id="plugin.show.description">
+        <source>Detail view of a single job, including its JobPosting structured data.</source>
+        <target>Detailansicht einer Stelle inklusive JobPosting-Auszeichnung.</target>
+      </trans-unit>
+      <trans-unit id="plugin.show.title">
+        <source>Jobs: Detail</source>
+        <target>Jobs: Einzelansicht</target>
+      </trans-unit>
+      <trans-unit id="salary_unit.DAY">
+        <source>per day</source>
+        <target>pro Tag</target>
+      </trans-unit>
+      <trans-unit id="salary_unit.HOUR">
+        <source>per hour</source>
+        <target>pro Stunde</target>
+      </trans-unit>
+      <trans-unit id="salary_unit.MONTH">
+        <source>per month</source>
+        <target>pro Monat</target>
+      </trans-unit>
+      <trans-unit id="salary_unit.WEEK">
+        <source>per week</source>
+        <target>pro Woche</target>
+      </trans-unit>
+      <trans-unit id="salary_unit.YEAR">
+        <source>per year</source>
+        <target>pro Jahr</target>
+      </trans-unit>
+      <trans-unit id="tab.contact">
+        <source>Contact</source>
+        <target>Kontakt</target>
+      </trans-unit>
+      <trans-unit id="tab.media">
+        <source>Media</source>
+        <target>Medien</target>
+      </trans-unit>
+      <trans-unit id="tab.relations">
+        <source>Assignments</source>
+        <target>Zuordnungen</target>
+      </trans-unit>
+      <trans-unit id="tab.requirements">
+        <source>Requirements</source>
+        <target>Anforderungen</target>
+      </trans-unit>
+      <trans-unit id="tab.schema">
+        <source>Structured data</source>
+        <target>Strukturierte Daten</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile">
+        <source>Company profile</source>
+        <target>Firmenprofil</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.description">
+        <source>Description</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.founding_date">
+        <source>Founded on</source>
+        <target>Gründungsdatum</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.images">
+        <source>Images</source>
+        <target>Bilder</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.legal_name">
+        <source>Legal name</source>
+        <target>Firmierung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.location">
+        <source>Location</source>
+        <target>Standort</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.location.description">
+        <source>Supplies the company address for the structured data.</source>
+        <target>Liefert die Firmenadresse für die strukturierten Daten.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.logo">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.logo.description">
+        <source>Recommended by Google, shown next to the job listing.</source>
+        <target>Von Google empfohlen, erscheint neben der Stellenanzeige.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.number_of_employees">
+        <source>Number of employees</source>
+        <target>Mitarbeiterzahl</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.teaser">
+        <source>Teaser</source>
+        <target>Teaser</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.title">
+        <source>Name</source>
+        <target>Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.title.description">
+        <source>Becomes the hiringOrganization name.</source>
+        <target>Wird zum Namen der hiringOrganization.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.url_linkedin">
+        <source>LinkedIn</source>
+        <target>LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.url_website">
+        <source>Website</source>
+        <target>Website</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_company_profile.url_xing">
+        <source>Xing</source>
+        <target>Xing</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact">
+        <source>Contact person</source>
+        <target>Ansprechpartner</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.description">
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.email">
+        <source>Email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.first_name">
+        <source>First name</source>
+        <target>Vorname</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.last_name">
+        <source>Last name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.phone">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.photo">
+        <source>Photo</source>
+        <target>Foto</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.role">
+        <source>Role</source>
+        <target>Rolle</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.role.description">
+        <source>Job title of the contact person, e.g. Head of HR.</source>
+        <target>Funktion des Ansprechpartners, z. B. Leitung Personal.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.url_linkedin">
+        <source>LinkedIn</source>
+        <target>LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.url_website">
+        <source>Website</source>
+        <target>Website</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_contact.url_xing">
+        <source>Xing</source>
+        <target>Xing</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job">
+        <source>Job</source>
+        <target>Job</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.applicant_location_requirements">
+        <source>Eligible countries</source>
+        <target>Zulässige Länder</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.applicant_location_requirements.description">
+        <source>Required for remote jobs: at least one country must be given here or via a location.</source>
+        <target>Bei Remote-Stellen Pflicht: mindestens ein Land hier oder über einen Standort.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.application_email">
+        <source>Application email</source>
+        <target>Bewerbungs-E-Mail</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.application_url">
+        <source>Application URL</source>
+        <target>Bewerbungs-URL</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_currency">
+        <source>Currency</source>
+        <target>Währung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_currency.description">
+        <source>ISO 4217 code, e.g. EUR.</source>
+        <target>ISO-4217-Code, z. B. EUR.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_max">
+        <source>Salary to</source>
+        <target>Gehalt bis</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_min">
+        <source>Salary from</source>
+        <target>Gehalt von</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_unit">
+        <source>Salary period</source>
+        <target>Gehaltszeitraum</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_value">
+        <source>Salary</source>
+        <target>Gehalt</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.base_salary_value.description">
+        <source>Fixed amount. Leave empty to specify a range instead.</source>
+        <target>Fester Betrag. Für eine Spanne leer lassen.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.company_profiles">
+        <source>Company profiles</source>
+        <target>Firmenprofile</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.company_profiles.description">
+        <source>The first profile becomes the hiringOrganization, which Google requires.</source>
+        <target>Das erste Profil wird zur hiringOrganization, die Google verlangt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.contacts">
+        <source>Contact persons</source>
+        <target>Ansprechpartner</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.date_posted">
+        <source>Published on</source>
+        <target>Datum</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.date_posted.description">
+        <source>Date the job was first published. Required by Google.</source>
+        <target>Datum der Erstveröffentlichung. Von Google verlangt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.description">
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.description.description">
+        <source>The complete job description. Required by Google.</source>
+        <target>Die vollständige Stellenbeschreibung. Von Google verlangt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.direct_apply">
+        <source>Direct application</source>
+        <target>Direktbewerbung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.direct_apply.description">
+        <source>Only enable if applicants can apply on this site without a further sign-in.</source>
+        <target>Nur aktivieren, wenn Bewerbungen ohne weiteren Login auf dieser Website möglich sind.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.downloads">
+        <source>Downloads</source>
+        <target>Downloads</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.education_category">
+        <source>Education level</source>
+        <target>Ausbildungsniveau</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.education_category.description">
+        <source>Google only evaluates this fixed vocabulary; free text below is ignored by it.</source>
+        <target>Google wertet nur dieses feste Vokabular aus; der Freitext unten wird ignoriert.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.education_requirements">
+        <source>Education requirements</source>
+        <target>Ausbildungsanforderungen</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.employment_type">
+        <source>Employment type</source>
+        <target>Beschäftigungsart</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.employment_type.description">
+        <source>Multiple types are allowed.</source>
+        <target>Mehrfachauswahl ist erlaubt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.experience_in_place_of_education">
+        <source>Experience may replace education</source>
+        <target>Erfahrung ersetzt Ausbildung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.experience_months">
+        <source>Experience in months</source>
+        <target>Erfahrung in Monaten</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.experience_months.description">
+        <source>0 falls back to the months configured on the level.</source>
+        <target>0 übernimmt den Wert aus dem Level.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.experience_requirements">
+        <source>Experience requirements</source>
+        <target>Anforderungen an die Erfahrung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.identifier">
+        <source>Job ID</source>
+        <target>Job-ID</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.identifier.description">
+        <source>Your internal reference number. Helps search engines deduplicate the posting.</source>
+        <target>Interne Referenznummer. Hilft Suchmaschinen, die Anzeige eindeutig zuzuordnen.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.images">
+        <source>Images</source>
+        <target>Bilder</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.industry">
+        <source>Industry</source>
+        <target>Branche</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.industry.description">
+        <source>Empty falls back to the field of work.</source>
+        <target>Leer übernimmt den Wert aus dem Bereich.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.job_location_type">
+        <source>Fully remote</source>
+        <target>Vollständig remote</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.job_location_type.description">
+        <source>Emits jobLocationType TELECOMMUTE. Set the eligible countries below.</source>
+        <target>Setzt jobLocationType TELECOMMUTE. Zulässige Länder unten angeben.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.locations">
+        <source>Locations</source>
+        <target>Standorte</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.locations.description">
+        <source>Required by Google unless the job is fully remote.</source>
+        <target>Von Google verlangt, außer die Stelle ist vollständig remote.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.occupational_category">
+        <source>Occupational category</source>
+        <target>Berufskategorie</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.occupational_category.description">
+        <source>Empty falls back to the field of work.</source>
+        <target>Leer übernimmt den Wert aus dem Bereich.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.occupational_field">
+        <source>Field of work</source>
+        <target>Bereich</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.slug">
+        <source>URL segment</source>
+        <target>URL-Segment</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.teaser">
+        <source>Short description</source>
+        <target>Kurzbeschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.teaser.description">
+        <source>Shown in the list view. Not part of the structured data.</source>
+        <target>Erscheint in der Listenansicht. Nicht Teil der strukturierten Daten.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.title">
+        <source>Job title</source>
+        <target>Bezeichnung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.title.description">
+        <source>The job title only, without codes, locations, dates or salary.</source>
+        <target>Nur die Stellenbezeichnung, ohne Kürzel, Ort, Datum oder Gehalt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.valid_through">
+        <source>Valid through</source>
+        <target>Gültig bis</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_job.valid_through.description">
+        <source>Last day the job is listed. Leave empty for open-ended postings.</source>
+        <target>Letzter Tag der Anzeige. Für unbefristete Anzeigen leer lassen.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level.description">
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level.months_of_experience">
+        <source>Experience in months</source>
+        <target>Erfahrung in Monaten</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level.months_of_experience.description">
+        <source>Used as experienceRequirements for jobs on this level.</source>
+        <target>Wird als experienceRequirements für Jobs dieses Levels genutzt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level.slug">
+        <source>URL segment</source>
+        <target>URL-Segment</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_level.title">
+        <source>Title</source>
+        <target>Bezeichnung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location">
+        <source>Location</source>
+        <target>Standort</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.address_addition">
+        <source>Address addition</source>
+        <target>Adresszusatz</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.address_country">
+        <source>Country</source>
+        <target>Land</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.address_country.description">
+        <source>Required by Google as part of the job location.</source>
+        <target>Von Google als Teil des Arbeitsorts verlangt.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.address_region">
+        <source>Region</source>
+        <target>Region</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.address_region.description">
+        <source>State or province, e.g. Bayern.</source>
+        <target>Bundesland, z. B. Bayern.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.city">
+        <source>City</source>
+        <target>Ort</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.email">
+        <source>Email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.latitude">
+        <source>Latitude</source>
+        <target>Breitengrad</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.latitude.description">
+        <source>Decimal degrees, e.g. 52.52000000.</source>
+        <target>Dezimalgrad, z. B. 52.52000000.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.longitude">
+        <source>Longitude</source>
+        <target>Längengrad</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.longitude.description">
+        <source>Decimal degrees, e.g. 13.40500000.</source>
+        <target>Dezimalgrad, z. B. 13.40500000.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.name">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.phone">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.photo">
+        <source>Photo</source>
+        <target>Foto</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.street">
+        <source>Street</source>
+        <target>Straße</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.url_linkedin">
+        <source>LinkedIn</source>
+        <target>LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.url_website">
+        <source>Website</source>
+        <target>Website</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.url_xing">
+        <source>Xing</source>
+        <target>Xing</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_location.zip">
+        <source>Postal code</source>
+        <target>PLZ</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field">
+        <source>Field of work</source>
+        <target>Bereich</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.description">
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.industry">
+        <source>Industry</source>
+        <target>Branche</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.industry.description">
+        <source>Default for jobs in this field.</source>
+        <target>Vorgabe für Jobs dieses Bereichs.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.occupational_category">
+        <source>Occupational category</source>
+        <target>Berufskategorie</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.occupational_category.description">
+        <source>Default for jobs in this field, e.g. an O*NET-SOC code.</source>
+        <target>Vorgabe für Jobs dieses Bereichs, z. B. ein O*NET-SOC-Code.</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.slug">
+        <source>URL segment</source>
+        <target>URL-Segment</target>
+      </trans-unit>
+      <trans-unit id="tx_jobs_domain_model_occupational_field.title">
+        <source>Title</source>
+        <target>Bezeichnung</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

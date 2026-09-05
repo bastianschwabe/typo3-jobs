@@ -1,0 +1,2 @@
+# cat=basic; type=boolean; label=Enable statistics: Record job views, application clicks and filter usage in the frontend and show them in the backend modules and the dashboard widget. When disabled nothing is written, no session cookie is set for visitors, and the modules only show a notice.
+tracking.enabled = 1

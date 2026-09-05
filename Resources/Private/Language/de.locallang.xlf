@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/locallang.xlf" date="2026-08-21T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="contact.email">
+        <source>Email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="contact.phone">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="filter.any">
+        <source>All</source>
+        <target>Alle</target>
+      </trans-unit>
+      <trans-unit id="filter.employmentType">
+        <source>Employment type</source>
+        <target>Beschäftigungsart</target>
+      </trans-unit>
+      <trans-unit id="filter.legend">
+        <source>Filter jobs</source>
+        <target>Stellen filtern</target>
+      </trans-unit>
+      <trans-unit id="filter.level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="filter.location">
+        <source>Location</source>
+        <target>Standort</target>
+      </trans-unit>
+      <trans-unit id="filter.occupationalField">
+        <source>Field of work</source>
+        <target>Bereich</target>
+      </trans-unit>
+      <trans-unit id="filter.remoteOnly">
+        <source>Remote only</source>
+        <target>Nur Remote</target>
+      </trans-unit>
+      <trans-unit id="filter.reset">
+        <source>Reset</source>
+        <target>Zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="filter.search">
+        <source>Search</source>
+        <target>Suche</target>
+      </trans-unit>
+      <trans-unit id="filter.searchPlaceholder">
+        <source>Job title or keyword</source>
+        <target>Stellenbezeichnung oder Stichwort</target>
+      </trans-unit>
+      <trans-unit id="filter.submit">
+        <source>Apply filters</source>
+        <target>Filter anwenden</target>
+      </trans-unit>
+      <trans-unit id="job.apply">
+        <source>Apply now</source>
+        <target>Jetzt bewerben</target>
+      </trans-unit>
+      <trans-unit id="job.back">
+        <source>Back to all jobs</source>
+        <target>Zurück zur Übersicht</target>
+      </trans-unit>
+      <trans-unit id="job.company">
+        <source>The company</source>
+        <target>Das Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="job.contacts">
+        <source>Your contact</source>
+        <target>Ihr Ansprechpartner</target>
+      </trans-unit>
+      <trans-unit id="job.description">
+        <source>About the role</source>
+        <target>Die Aufgabe</target>
+      </trans-unit>
+      <trans-unit id="job.downloads">
+        <source>Downloads</source>
+        <target>Downloads</target>
+      </trans-unit>
+      <trans-unit id="job.education">
+        <source>Education</source>
+        <target>Ausbildung</target>
+      </trans-unit>
+      <trans-unit id="job.employmentType">
+        <source>Employment type</source>
+        <target>Beschäftigungsart</target>
+      </trans-unit>
+      <trans-unit id="job.experience">
+        <source>Experience</source>
+        <target>Erfahrung</target>
+      </trans-unit>
+      <trans-unit id="job.experienceMonths">
+        <source>%s months</source>
+        <target>%s Monate</target>
+      </trans-unit>
+      <trans-unit id="job.expired">
+        <source>This position is no longer open.</source>
+        <target>Diese Stelle ist nicht mehr ausgeschrieben.</target>
+      </trans-unit>
+      <trans-unit id="job.identifier">
+        <source>Reference</source>
+        <target>Referenz</target>
+      </trans-unit>
+      <trans-unit id="job.level">
+        <source>Level</source>
+        <target>Level</target>
+      </trans-unit>
+      <trans-unit id="job.locations">
+        <source>Locations</source>
+        <target>Standorte</target>
+      </trans-unit>
+      <trans-unit id="job.occupationalField">
+        <source>Field of work</source>
+        <target>Bereich</target>
+      </trans-unit>
+      <trans-unit id="job.publishedOn">
+        <source>Published on</source>
+        <target>Veröffentlicht am</target>
+      </trans-unit>
+      <trans-unit id="job.remote">
+        <source>Remote</source>
+        <target>Remote</target>
+      </trans-unit>
+      <trans-unit id="job.requirements">
+        <source>Requirements</source>
+        <target>Anforderungen</target>
+      </trans-unit>
+      <trans-unit id="job.salary">
+        <source>Salary</source>
+        <target>Gehalt</target>
+      </trans-unit>
+      <trans-unit id="job.salaryRange">
+        <source>%s to %s %s %s</source>
+        <target>%s bis %s %s %s</target>
+      </trans-unit>
+      <trans-unit id="job.validThrough">
+        <source>Apply by</source>
+        <target>Bewerbung bis</target>
+      </trans-unit>
+      <trans-unit id="list.empty">
+        <source>No jobs match your filters.</source>
+        <target>Keine Stellen passen zu den gewählten Filtern.</target>
+      </trans-unit>
+      <trans-unit id="list.heading">
+        <source>Open positions</source>
+        <target>Offene Stellen</target>
+      </trans-unit>
+      <trans-unit id="list.more">
+        <source>View job</source>
+        <target>Stelle ansehen</target>
+      </trans-unit>
+      <trans-unit id="list.results">
+        <source>%s jobs found</source>
+        <target>%s Stellen gefunden</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

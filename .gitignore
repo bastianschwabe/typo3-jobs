@@ -1,0 +1,11 @@
+/.Build/
+/Documentation-GENERATED-temp/
+/.ddev/.*
+/.idea/
+/.php-cs-fixer.cache
+/.phpunit.cache/
+/composer.lock
+/var/
+/.ddev/config.local.yaml
+/config/system/settings.php
+/config/system/additional.php

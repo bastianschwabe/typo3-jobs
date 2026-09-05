@@ -1,0 +1,58 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<dl class="job-meta">
+    <f:if condition="{job.occupationalField}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.occupationalField" domain="jobs.messages" /></dt>
+            <dd>{job.occupationalField.title}</dd>
+        </div>
+    </f:if>
+
+    <f:if condition="{job.level}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.level" domain="jobs.messages" /></dt>
+            <dd>{job.level.title}</dd>
+        </div>
+    </f:if>
+
+    <f:if condition="{job.employmentTypes}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.employmentType" domain="jobs.messages" /></dt>
+            <dd>
+                <f:for each="{job.employmentTypes}" as="employmentType" iteration="i">
+                    <f:translate key="employment_type.{employmentType.value}" domain="jobs.db" /><f:if condition="{i.isLast} == 0">, </f:if>
+                </f:for>
+            </dd>
+        </div>
+    </f:if>
+
+    <f:if condition="{job.locations}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.locations" domain="jobs.messages" /></dt>
+            <dd>
+                <f:for each="{job.locations}" as="location" iteration="i">
+                    {location.city}<f:if condition="{i.isLast} == 0">, </f:if>
+                </f:for>
+            </dd>
+        </div>
+    </f:if>
+
+    <f:if condition="{job.remote}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.remote" domain="jobs.messages" /></dt>
+            <dd><f:translate key="filter.remoteOnly" domain="jobs.messages" /></dd>
+        </div>
+    </f:if>
+
+    <f:if condition="{job.datePosted}">
+        <div class="job-meta__entry">
+            <dt><f:translate key="job.publishedOn" domain="jobs.messages" /></dt>
+            <dd><time datetime="{job.datePosted -> f:format.date(format: 'Y-m-d')}">
+                <f:format.date format="d.m.Y">{job.datePosted}</f:format.date>
+            </time></dd>
+        </div>
+    </f:if>
+</dl>
+
+</html>

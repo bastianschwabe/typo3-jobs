@@ -1,0 +1,7 @@
+# Sensible defaults for new records, saving editors a step per job.
+TCAdefaults.tx_jobs_domain_model_job {
+    base_salary_currency = EUR
+    base_salary_unit = YEAR
+}
+
+TCAdefaults.tx_jobs_domain_model_location.address_country = DE

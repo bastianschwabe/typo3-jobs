@@ -1,0 +1,29 @@
+"tx_jobs_domain_model_level"
+,"uid","pid","title","slug","months_of_experience","hidden","deleted","sys_language_uid","l10n_parent"
+,1,1,"Junior","junior",0,0,0,0,0
+,2,1,"Senior","senior",60,0,0,0,0
+,3,1,"Erfahren","erfahren",60,0,0,1,2
+"tx_jobs_domain_model_occupational_field"
+,"uid","pid","title","slug","industry","occupational_category","hidden","deleted","sys_language_uid","l10n_parent"
+,1,1,"Development","development","Information Technology","15-1252.00",0,0,0,0
+,2,1,"Marketing","marketing","Marketing","11-2021.00",0,0,0,0
+,3,1,"Softwareentwicklung","softwareentwicklung","Information Technology","15-1252.00",0,0,1,1
+"tx_jobs_domain_model_location"
+,"uid","pid","name","city","zip","address_country","latitude","longitude","hidden","deleted","sys_language_uid","l10n_parent"
+,1,1,"Berlin office","Berlin","10115","DE",52.52000000,13.40500000,0,0,0,0
+,2,1,"Munich office","München","80331","DE",48.13720000,11.57560000,0,0,0,0
+,3,1,"Büro Berlin","Berlin","10115","DE",52.52000000,13.40500000,0,0,1,1
+"tx_jobs_domain_model_job"
+,"uid","pid","title","slug","teaser","description","date_posted","valid_through","employment_type","job_location_type","level","occupational_field","hidden","deleted","sys_language_uid","l10n_parent","l10n_source"
+,1,1,"Backend Developer","backend-developer","PHP and TYPO3","<p>Build things.</p>",1772409600,\NULL,"FULL_TIME",0,2,1,0,0,0,0,0
+,2,1,"Marketing Manager","marketing-manager","Campaigns","<p>Tell stories.</p>",1772409600,\NULL,"PART_TIME",0,1,2,0,0,0,0,0
+,3,1,"Expired Position","expired-position","Gone","<p>Too late.</p>",1769904000,1775001600,"FULL_TIME",0,1,1,0,0,0,0,0
+,4,1,"Remote Designer","remote-designer","Pixels","<p>Design things.</p>",1772409600,\NULL,"PART_TIME",1,1,2,0,0,0,0,0
+,5,1,"Hidden Job","hidden-job","Secret","<p>Hidden.</p>",1772409600,\NULL,"FULL_TIME",0,1,1,1,0,0,0,0
+,10,1,"Backend-Entwickler:in","backend-entwicklerin","PHP und TYPO3","<p>Dinge bauen.</p>",1772409600,\NULL,"FULL_TIME",0,2,1,0,0,1,1,1
+"tx_jobs_job_location_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,1
+,2,2,1,1
+,3,1,1,1
+,10,1,1,1

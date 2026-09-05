@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/Modules/jobs.xlf" date="2026-09-05T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="short_description">
+        <source>Job postings and their statistics</source>
+        <target>Stellenanzeigen und ihre Statistiken</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Overview of all job postings in the installation and the statistics of views, applications and filter usage.</source>
+        <target>Übersicht aller Stellenanzeigen der Installation sowie Statistiken zu Aufrufen, Bewerbungen und Filternutzung.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

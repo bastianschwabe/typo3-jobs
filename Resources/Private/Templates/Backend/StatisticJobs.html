@@ -1,0 +1,66 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers">
+
+<f:layout name="Module" />
+
+<f:section name="Content">
+    <f:asset.css identifier="jobs-backend" href="EXT:jobs/Resources/Public/Css/Backend.css" />
+
+    <h1><f:translate key="title" domain="jobs.modules.statistics" /> &ndash; <f:translate key="statistic.view.jobs" domain="jobs.backend" /></h1>
+
+    <f:if condition="!{trackingEnabled}">
+        <f:render partial="Backend/DisabledNotice" arguments="{settingsUrl: settingsUrl}" />
+    </f:if>
+
+    <div class="{f:if(condition: '!{trackingEnabled}', then: 'jobs-disabled')}" {f:if(condition: '!{trackingEnabled}', then: 'aria-disabled="true"')}>
+        <f:render partial="Backend/TopCharts" arguments="{charts: charts}" />
+
+        <f:if condition="{summaries}">
+            <f:then>
+                <div class="table-fit">
+                    <table class="table table-striped table-hover jobs-table">
+                        <thead>
+                            <tr>
+                                <th><f:translate key="statistic.jobs.column.job" domain="jobs.backend" /></th>
+                                <th class="text-end"><f:translate key="statistic.jobs.column.views" domain="jobs.backend" /></th>
+                                <th class="text-end"><f:translate key="statistic.jobs.column.sessions" domain="jobs.backend" /></th>
+                                <th class="text-end"><f:translate key="statistic.jobs.column.applies" domain="jobs.backend" /></th>
+                                <th class="text-end"><f:translate key="statistic.jobs.column.completed" domain="jobs.backend" /></th>
+                                <th class="text-end"><f:translate key="statistic.jobs.column.conversion" domain="jobs.backend" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <f:for each="{summaries}" as="summary">
+                                <tr id="job-{summary.jobUid}" class="{f:if(condition: '{summary.jobUid} == {highlight}', then: 'jobs-table__row--highlight')}">
+                                    <td>
+                                        <f:if condition="{summary.exists}">
+                                            <f:then>
+                                                <be:link.editRecord table="tx_jobs_domain_model_job" uid="{summary.jobUid}">{summary.title}</be:link.editRecord>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="text-body-secondary"><f:translate key="statistic.jobs.deletedJob" domain="jobs.backend" arguments="{0: summary.jobUid}" /></span>
+                                            </f:else>
+                                        </f:if>
+                                    </td>
+                                    <td class="text-end">{summary.views}</td>
+                                    <td class="text-end">{summary.sessions}</td>
+                                    <td class="text-end">{summary.appliesStarted}</td>
+                                    <td class="text-end">{summary.appliesCompleted}</td>
+                                    <td class="text-end">{summary.conversionRate -> f:format.number(decimals: 1)}&nbsp;%</td>
+                                </tr>
+                            </f:for>
+                        </tbody>
+                    </table>
+                </div>
+            </f:then>
+            <f:else>
+                <f:be.infobox state="-1" title="{f:translate(key: 'statistic.jobs.empty.title', domain: 'jobs.backend')}">
+                    <f:translate key="statistic.jobs.empty.message" domain="jobs.backend" />
+                </f:be.infobox>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

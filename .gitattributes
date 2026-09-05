@@ -1,0 +1,11 @@
+# Keep development-only files out of the package that Composer and the TER ship.
+/.ddev            export-ignore
+/.github          export-ignore
+/.editorconfig    export-ignore
+/.gitattributes   export-ignore
+/.gitignore       export-ignore
+/Build            export-ignore
+/Tests            export-ignore
+/config           export-ignore
+/DEVELOPMENT.md   export-ignore
+/Documentation-GENERATED-temp export-ignore

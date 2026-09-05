@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="job-location">
+    <p class="job-location__name">{location.name}</p>
+    <address class="job-location__address">
+        <f:if condition="{location.street}">{location.street}<br /></f:if>
+        <f:if condition="{location.addressAddition}">{location.addressAddition}<br /></f:if>
+        <f:if condition="{location.city}">{location.zip} {location.city}<br /></f:if>
+        <f:if condition="{location.addressRegion}">{location.addressRegion}<br /></f:if>
+    </address>
+    <f:if condition="{location.phone}">
+        <p class="job-location__phone">
+            <f:translate key="contact.phone" domain="jobs.messages" />:
+            <a href="tel:{location.phone}">{location.phone}</a>
+        </p>
+    </f:if>
+    <f:if condition="{location.email}">
+        <p class="job-location__email">
+            <f:link.email email="{location.email}" />
+        </p>
+    </f:if>
+</div>
+
+</html>

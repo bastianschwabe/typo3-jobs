@@ -1,0 +1,29 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="job-contact">
+    <f:if condition="{contact.photo}">
+        <f:image image="{contact.photo}" width="160c" height="160c" loading="lazy"
+                 alt="{contact.fullName}" class="job-contact__photo" />
+    </f:if>
+
+    <p class="job-contact__name">{contact.fullName}</p>
+    <f:if condition="{contact.role}">
+        <p class="job-contact__role">{contact.role}</p>
+    </f:if>
+    <f:if condition="{contact.description}">
+        <p class="job-contact__description">{contact.description -> f:format.nl2br()}</p>
+    </f:if>
+    <f:if condition="{contact.phone}">
+        <p class="job-contact__phone">
+            <a href="tel:{contact.phone}">{contact.phone}</a>
+        </p>
+    </f:if>
+    <f:if condition="{contact.email}">
+        <p class="job-contact__email">
+            <f:link.email email="{contact.email}" />
+        </p>
+    </f:if>
+</div>
+
+</html>

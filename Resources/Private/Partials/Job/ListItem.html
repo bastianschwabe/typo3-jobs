@@ -1,0 +1,22 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<article class="job-teaser">
+    <h3 class="job-teaser__title">
+        <f:link.action action="show" arguments="{job: job}"
+                       pageUid="{settings.detailPid}">{job.title}</f:link.action>
+    </h3>
+
+    <f:if condition="{job.teaser}">
+        <p class="job-teaser__text">{job.teaser}</p>
+    </f:if>
+
+    <f:render partial="Job/Meta" arguments="{job: job}" />
+
+    <f:link.action action="show" arguments="{job: job}"
+                   pageUid="{settings.detailPid}" class="job-teaser__more">
+        <f:translate key="list.more" domain="jobs.messages" />
+    </f:link.action>
+</article>
+
+</html>

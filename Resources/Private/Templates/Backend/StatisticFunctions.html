@@ -1,0 +1,48 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers">
+
+<f:layout name="Module" />
+
+<f:section name="Content">
+    <f:asset.css identifier="jobs-backend" href="EXT:jobs/Resources/Public/Css/Backend.css" />
+    <f:asset.module identifier="@typo3/backend/modal.js" />
+
+    <h1><f:translate key="title" domain="jobs.modules.statistics" /> &ndash; <f:translate key="statistic.view.functions" domain="jobs.backend" /></h1>
+
+    <f:if condition="!{trackingEnabled}">
+        <f:render partial="Backend/DisabledNotice" arguments="{settingsUrl: settingsUrl}" />
+    </f:if>
+
+    <div class="card card-size-medium {f:if(condition: '!{trackingEnabled}', then: 'jobs-disabled')}" {f:if(condition: '!{trackingEnabled}', then: 'aria-disabled="true"')}>
+        <div class="card-header">
+            <div class="card-icon"><core:icon identifier="actions-delete" size="medium" /></div>
+            <div class="card-header-body">
+                <h2 class="card-title"><f:translate key="statistic.functions.reset.title" domain="jobs.backend" /></h2>
+                <span class="card-subtitle"><f:translate key="statistic.functions.reset.subtitle" domain="jobs.backend" /></span>
+            </div>
+        </div>
+        <div class="card-body">
+            <p><f:translate key="statistic.functions.reset.description" domain="jobs.backend" /></p>
+        </div>
+        <div class="card-footer">
+            <f:comment>
+                The submit button opens TYPO3's confirmation modal; on "OK" the
+                modal submits the surrounding form. The route only accepts POST.
+            </f:comment>
+            <form method="post" action="{resetUrl}">
+                <button type="submit" class="btn btn-danger t3js-modal-trigger"
+                        {f:if(condition: '!{trackingEnabled}', then: 'disabled')}
+                        data-severity="warning"
+                        data-title="{f:translate(key: 'statistic.functions.reset.title', domain: 'jobs.backend')}"
+                        data-content="{f:translate(key: 'statistic.functions.reset.confirm', domain: 'jobs.backend')}"
+                        data-button-ok-text="{f:translate(key: 'statistic.functions.reset.button', domain: 'jobs.backend')}">
+                    <core:icon identifier="actions-delete" size="small" />
+                    <f:translate key="statistic.functions.reset.button" domain="jobs.backend" />
+                </button>
+            </form>
+        </div>
+    </div>
+</f:section>
+
+</html>

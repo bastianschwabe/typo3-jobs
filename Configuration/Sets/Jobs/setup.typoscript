@@ -1,0 +1,23 @@
+plugin.tx_jobs {
+    view {
+        templateRootPaths.0 = EXT:jobs/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:jobs/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:jobs/Resources/Private/Layouts/
+    }
+
+    persistence {
+        storagePid = {$jobs.storagePid}
+    }
+
+    settings {
+        detailPid = {$jobs.detailPid}
+        itemsPerPage = {$jobs.itemsPerPage}
+
+        # Fallback hiringOrganization when a job has no company profile assigned.
+        organization {
+            name = {$jobs.organization.name}
+            url = {$jobs.organization.url}
+            logo = {$jobs.organization.logo}
+        }
+    }
+}

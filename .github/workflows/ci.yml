@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  code-quality:
+    name: Code quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: intl, mbstring, pdo_sqlite
+          tools: composer:v2
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: composer lint:php
+      - run: composer cs:check
+      - run: composer analyse
+
+  documentation:
+    name: Documentation renders
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render with the official TYPO3 renderer
+        run: |
+          docker run --rm --pull always -v "$PWD":/project \
+            ghcr.io/typo3-documentation/render-guides:latest \
+            --config=Documentation --fail-on-log --no-progress
+
+  tests:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3', '8.4', '8.5']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: intl, mbstring, pdo_sqlite
+          tools: composer:v2
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: composer test:unit
+      - run: composer test:functional
+        env:
+          typo3DatabaseDriver: pdo_sqlite
+
+  tests-mariadb:
+    name: PHP 8.4 with MariaDB
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s --health-timeout=5s --health-retries=5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: intl, mbstring, mysqli, pdo_mysql
+          tools: composer:v2
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: composer test:functional
+        env:
+          typo3DatabaseDriver: mysqli
+          typo3DatabaseName: func_test
+          typo3DatabaseUsername: root
+          typo3DatabasePassword: root
+          typo3DatabaseHost: 127.0.0.1
+          typo3DatabasePort: 3306

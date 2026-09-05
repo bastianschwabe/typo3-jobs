@@ -1,0 +1,21 @@
+name: typo3-jobs
+type: typo3
+docroot: .Build/Web
+php_version: "8.5"
+webserver_type: apache-fpm
+composer_version: "2"
+database:
+  type: mariadb
+  version: "10.11"
+web_environment:
+  - TYPO3_CONTEXT=Development
+  # Credentials for the functional test suite, which creates its own throwaway
+  # databases (db_ft1, db_ft2, ...) and therefore needs CREATE DATABASE.
+  # The driver is deliberately left unset: Build/phpunit/FunctionalTests.xml
+  # defaults to SQLite, so the suite runs without touching MariaDB. Override it
+  # explicitly to test against MariaDB:
+  #   ddev exec typo3DatabaseDriver=mysqli composer test:functional
+  - typo3DatabaseName=db
+  - typo3DatabaseUsername=root
+  - typo3DatabasePassword=root
+  - typo3DatabaseHost=db

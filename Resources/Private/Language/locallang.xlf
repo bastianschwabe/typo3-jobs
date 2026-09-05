@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/locallang.xlf" date="2026-08-21T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="contact.email">
+        <source>Email</source>
+      </trans-unit>
+      <trans-unit id="contact.phone">
+        <source>Phone</source>
+      </trans-unit>
+      <trans-unit id="filter.any">
+        <source>All</source>
+      </trans-unit>
+      <trans-unit id="filter.employmentType">
+        <source>Employment type</source>
+      </trans-unit>
+      <trans-unit id="filter.legend">
+        <source>Filter jobs</source>
+      </trans-unit>
+      <trans-unit id="filter.level">
+        <source>Level</source>
+      </trans-unit>
+      <trans-unit id="filter.location">
+        <source>Location</source>
+      </trans-unit>
+      <trans-unit id="filter.occupationalField">
+        <source>Field of work</source>
+      </trans-unit>
+      <trans-unit id="filter.remoteOnly">
+        <source>Remote only</source>
+      </trans-unit>
+      <trans-unit id="filter.reset">
+        <source>Reset</source>
+      </trans-unit>
+      <trans-unit id="filter.search">
+        <source>Search</source>
+      </trans-unit>
+      <trans-unit id="filter.searchPlaceholder">
+        <source>Job title or keyword</source>
+      </trans-unit>
+      <trans-unit id="filter.submit">
+        <source>Apply filters</source>
+      </trans-unit>
+      <trans-unit id="job.apply">
+        <source>Apply now</source>
+      </trans-unit>
+      <trans-unit id="job.back">
+        <source>Back to all jobs</source>
+      </trans-unit>
+      <trans-unit id="job.company">
+        <source>The company</source>
+      </trans-unit>
+      <trans-unit id="job.contacts">
+        <source>Your contact</source>
+      </trans-unit>
+      <trans-unit id="job.description">
+        <source>About the role</source>
+      </trans-unit>
+      <trans-unit id="job.downloads">
+        <source>Downloads</source>
+      </trans-unit>
+      <trans-unit id="job.education">
+        <source>Education</source>
+      </trans-unit>
+      <trans-unit id="job.employmentType">
+        <source>Employment type</source>
+      </trans-unit>
+      <trans-unit id="job.experience">
+        <source>Experience</source>
+      </trans-unit>
+      <trans-unit id="job.experienceMonths">
+        <source>%s months</source>
+      </trans-unit>
+      <trans-unit id="job.expired">
+        <source>This position is no longer open.</source>
+      </trans-unit>
+      <trans-unit id="job.identifier">
+        <source>Reference</source>
+      </trans-unit>
+      <trans-unit id="job.level">
+        <source>Level</source>
+      </trans-unit>
+      <trans-unit id="job.locations">
+        <source>Locations</source>
+      </trans-unit>
+      <trans-unit id="job.occupationalField">
+        <source>Field of work</source>
+      </trans-unit>
+      <trans-unit id="job.publishedOn">
+        <source>Published on</source>
+      </trans-unit>
+      <trans-unit id="job.remote">
+        <source>Remote</source>
+      </trans-unit>
+      <trans-unit id="job.requirements">
+        <source>Requirements</source>
+      </trans-unit>
+      <trans-unit id="job.salary">
+        <source>Salary</source>
+      </trans-unit>
+      <trans-unit id="job.salaryRange">
+        <source>%s to %s %s %s</source>
+      </trans-unit>
+      <trans-unit id="job.validThrough">
+        <source>Apply by</source>
+      </trans-unit>
+      <trans-unit id="list.empty">
+        <source>No jobs match your filters.</source>
+      </trans-unit>
+      <trans-unit id="list.heading">
+        <source>Open positions</source>
+      </trans-unit>
+      <trans-unit id="list.more">
+        <source>View job</source>
+      </trans-unit>
+      <trans-unit id="list.results">
+        <source>%s jobs found</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

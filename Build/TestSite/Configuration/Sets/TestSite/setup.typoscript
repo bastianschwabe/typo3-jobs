@@ -1,0 +1,45 @@
+# Minimal page rendering for the development instance. PAGEVIEW resolves
+# Pages/<PageLayout>.html and adds Partials/ and Layouts/ next to it.
+page = PAGE
+page {
+    10 = PAGEVIEW
+    10 {
+        paths.10 = EXT:jobs_testsite/Resources/Private/
+
+        # PAGEVIEW fills "content" from the page layout's content areas. This
+        # demo has no backend layout, so that variable is parked under another
+        # name and colPos 0 is rendered directly instead.
+        contentAs = contentAreas
+
+        dataProcessing {
+            10 = menu
+            10 {
+                levels = 2
+                as = mainMenu
+            }
+            20 = language-menu
+            20 {
+                as = languageMenu
+            }
+        }
+
+        variables {
+            content = CONTENT
+            content {
+                table = tt_content
+                select {
+                    orderBy = sorting
+                    where = {#colPos}=0
+                }
+            }
+        }
+    }
+
+    shortcutIcon = EXT:jobs/Resources/Public/Icons/Extension.svg
+}
+
+config {
+    absRefPrefix = auto
+    contentObjectExceptionHandler = 0
+    debug = 1
+}

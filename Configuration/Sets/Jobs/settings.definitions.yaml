@@ -1,0 +1,32 @@
+categories:
+  jobs: ~
+  jobs.view:
+    parent: jobs
+  jobs.schema:
+    parent: jobs
+
+settings:
+  jobs.storagePid:
+    type: string
+    default: ''
+    category: jobs
+  jobs.detailPid:
+    type: int
+    default: 0
+    category: jobs
+  jobs.itemsPerPage:
+    type: int
+    default: 10
+    category: jobs.view
+  jobs.organization.name:
+    type: string
+    default: ''
+    category: jobs.schema
+  jobs.organization.url:
+    type: string
+    default: ''
+    category: jobs.schema
+  jobs.organization.logo:
+    type: string
+    default: ''
+    category: jobs.schema

@@ -1,0 +1,24 @@
+{
+    "name": "bastianschwabe/jobs-testsite",
+    "type": "typo3-cms-extension",
+    "description": "Development-only site package for EXT:jobs. Provides a minimal page template and a seed command. Never published.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.2",
+        "typo3/cms-core": "^14.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "BastianSchwabe\\JobsTestSite\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "jobs_testsite",
+            "Package": {
+                "providesPackages": {}
+            },
+            "version": "0.1.0"
+        }
+    }
+}

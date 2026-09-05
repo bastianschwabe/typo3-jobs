@@ -1,0 +1,19 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    Access state as a coloured badge. "active" / "hidden" / "scheduled" /
+    "ended" come from the access fields; the extra "expired" badge marks a
+    passed validThrough date, which does not change the access state.
+</f:comment>
+<f:switch expression="{status}">
+    <f:case value="active"><span class="badge badge-success"><f:translate key="list.status.active" domain="jobs.backend" /></span></f:case>
+    <f:case value="hidden"><span class="badge badge-danger"><f:translate key="list.status.hidden" domain="jobs.backend" /></span></f:case>
+    <f:case value="scheduled"><span class="badge badge-warning"><f:translate key="list.status.scheduled" domain="jobs.backend" /></span></f:case>
+    <f:case value="ended"><span class="badge badge-secondary"><f:translate key="list.status.ended" domain="jobs.backend" /></span></f:case>
+</f:switch>
+<f:if condition="{expired}">
+    <span class="badge badge-notice"><f:translate key="list.status.expired" domain="jobs.backend" /></span>
+</f:if>
+
+</html>

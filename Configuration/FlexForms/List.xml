@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>jobs.db:flexform.sheet.general</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.detailPid>
+                        <label>jobs.db:flexform.detailPid</label>
+                        <description>jobs.db:flexform.detailPid.description</description>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                        </config>
+                    </settings.detailPid>
+                    <settings.itemsPerPage>
+                        <label>jobs.db:flexform.itemsPerPage</label>
+                        <description>jobs.db:flexform.itemsPerPage.description</description>
+                        <config>
+                            <type>number</type>
+                            <size>5</size>
+                            <default>0</default>
+                            <range>
+                                <lower>0</lower>
+                                <upper>100</upper>
+                            </range>
+                        </config>
+                    </settings.itemsPerPage>
+                </el>
+            </ROOT>
+        </sDEF>
+        <filters>
+            <ROOT>
+                <sheetTitle>jobs.db:flexform.sheet.filters</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.preselect.level>
+                        <label>jobs.db:flexform.preselect.level</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>tx_jobs_domain_model_level</foreign_table>
+                            <foreign_table_where>ORDER BY tx_jobs_domain_model_level.sorting</foreign_table_where>
+                            <items>
+                                <numIndex index="0">
+                                    <label></label>
+                                    <value>0</value>
+                                </numIndex>
+                            </items>
+                            <default>0</default>
+                        </config>
+                    </settings.preselect.level>
+                    <settings.preselect.occupationalField>
+                        <label>jobs.db:flexform.preselect.occupationalField</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>tx_jobs_domain_model_occupational_field</foreign_table>
+                            <foreign_table_where>ORDER BY tx_jobs_domain_model_occupational_field.sorting</foreign_table_where>
+                            <items>
+                                <numIndex index="0">
+                                    <label></label>
+                                    <value>0</value>
+                                </numIndex>
+                            </items>
+                            <default>0</default>
+                        </config>
+                    </settings.preselect.occupationalField>
+                    <settings.preselect.location>
+                        <label>jobs.db:flexform.preselect.location</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>tx_jobs_domain_model_location</foreign_table>
+                            <foreign_table_where>ORDER BY tx_jobs_domain_model_location.sorting</foreign_table_where>
+                            <items>
+                                <numIndex index="0">
+                                    <label></label>
+                                    <value>0</value>
+                                </numIndex>
+                            </items>
+                            <default>0</default>
+                        </config>
+                    </settings.preselect.location>
+                </el>
+            </ROOT>
+        </filters>
+    </sheets>
+</T3DataStructure>

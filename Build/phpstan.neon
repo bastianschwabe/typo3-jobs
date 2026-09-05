@@ -1,0 +1,11 @@
+parameters:
+    level: 8
+    paths:
+        - ../Classes
+        - ../Configuration
+        - ../Tests
+    bootstrapFiles:
+        - ../.Build/vendor/autoload.php
+    excludePaths:
+        analyse:
+            - ../Tests/Functional/Fixtures/*

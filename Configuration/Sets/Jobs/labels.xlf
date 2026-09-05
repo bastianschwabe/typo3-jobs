@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Configuration/Sets/Jobs/labels.xlf" date="2026-08-21T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="label">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="categories.jobs">
+        <source>Jobs</source>
+      </trans-unit>
+      <trans-unit id="categories.jobs.view">
+        <source>Display</source>
+      </trans-unit>
+      <trans-unit id="categories.jobs.schema">
+        <source>Structured data</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.storagePid">
+        <source>Storage folder</source>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.storagePid">
+        <source>Comma separated page IDs the job records are stored on.</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.detailPid">
+        <source>Detail page</source>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.detailPid">
+        <source>Page containing the detail plugin. Used to link from the list.</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.itemsPerPage">
+        <source>Jobs per page</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.name">
+        <source>Fallback organization name</source>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.organization.name">
+        <source>Used as hiringOrganization when a job has no company profile assigned. Google requires this property.</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.url">
+        <source>Fallback organization URL</source>
+      </trans-unit>
+      <trans-unit id="settings.jobs.organization.logo">
+        <source>Fallback organization logo URL</source>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.organization.logo">
+        <source>Absolute URL of the company logo. Recommended by Google for the job listing.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

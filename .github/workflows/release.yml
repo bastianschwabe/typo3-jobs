@@ -1,0 +1,67 @@
+name: Release to TER
+
+# Publishes the tagged commit to the TYPO3 Extension Repository through Tailor.
+#
+# Requirements:
+#   - A tag that is a plain version number, e.g. "0.1.0". The tag message
+#     becomes the TER upload comment; an annotated tag is therefore preferred.
+#   - The repository secret TYPO3_API_TOKEN: an access token of the TER
+#     account that owns the extension key (extensions.typo3.org > My Extensions
+#     > Access Tokens, scope "extension:read" + "extension:write").
+#
+# The version in the tag has to match ext_emconf.php, composer.json and
+# Documentation/guides.xml; the workflow refuses to upload otherwise.
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  publish:
+    name: Publish ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    env:
+      TYPO3_EXTENSION_KEY: jobs
+      TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check that every version number matches the tag
+        run: |
+          set -eu
+          version="${GITHUB_REF_NAME}"
+          fail=0
+          grep -q "'version' => '${version}'" ext_emconf.php || { echo "ext_emconf.php does not carry ${version}"; fail=1; }
+          grep -q "\"version\": \"${version}\"" composer.json || { echo "composer.json does not carry ${version}"; fail=1; }
+          grep -q "release=\"${version}\"" Documentation/guides.xml || { echo "Documentation/guides.xml does not carry ${version}"; fail=1; }
+          exit $fail
+
+      - name: Read the upload comment from the tag message
+        id: comment
+        run: |
+          comment="$(git tag -l --format='%(contents:subject)' "${GITHUB_REF_NAME}")"
+          if [ -z "${comment// }" ]; then
+            comment="Release ${GITHUB_REF_NAME}"
+          fi
+          echo "comment=${comment}" >> "$GITHUB_OUTPUT"
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: intl, mbstring, json, zip, curl
+          tools: composer:v2
+          coverage: none
+
+      - name: Install Tailor
+        run: composer global require typo3/tailor --prefer-dist --no-progress --no-interaction
+
+      - name: Publish to TER
+        # Tailor packs the working directory and honours the export-ignore
+        # entries of .gitattributes, so Build/, Tests/ and config/ stay out.
+        run: |
+          "$(composer global config bin-dir --absolute --quiet)/tailor" ter:publish \
+            --comment "${{ steps.comment.outputs.comment }}" \
+            "${GITHUB_REF_NAME}"

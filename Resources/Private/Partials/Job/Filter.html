@@ -1,0 +1,101 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    A plain GET form rather than f:form: it keeps the query string readable and
+    free of Extbase's __referrer / __trustedProperties fields.
+
+    selected/checked are emitted as bare attributes: Fluid renders
+    selected="" for a false condition, which browsers treat as selected.
+</f:comment>
+<form class="jobs-filter" method="get" action="{f:uri.action(action: 'list')}">
+    <fieldset>
+        <legend><f:translate key="filter.legend" domain="jobs.messages" /></legend>
+
+        <div class="jobs-filter__field">
+            <label for="jobs-filter-search">
+                <f:translate key="filter.search" domain="jobs.messages" />
+            </label>
+            <input type="search" id="jobs-filter-search"
+                   name="tx_jobs_list[demand][search]"
+                   value="{demand.search}"
+                   placeholder="{f:translate(key: 'filter.searchPlaceholder', domain: 'jobs.messages')}" />
+        </div>
+
+        <div class="jobs-filter__field">
+            <label for="jobs-filter-level">
+                <f:translate key="filter.level" domain="jobs.messages" />
+            </label>
+            <select id="jobs-filter-level" name="tx_jobs_list[demand][level]">
+                <option value="0"><f:translate key="filter.any" domain="jobs.messages" /></option>
+                <f:for each="{levels}" as="level">
+                    <option value="{level.uid}" {f:if(condition: '{demand.level} == {level.uid}', then: 'selected')}>
+                        {level.title}
+                    </option>
+                </f:for>
+            </select>
+        </div>
+
+        <div class="jobs-filter__field">
+            <label for="jobs-filter-field">
+                <f:translate key="filter.occupationalField" domain="jobs.messages" />
+            </label>
+            <select id="jobs-filter-field" name="tx_jobs_list[demand][occupationalField]">
+                <option value="0"><f:translate key="filter.any" domain="jobs.messages" /></option>
+                <f:for each="{occupationalFields}" as="field">
+                    <option value="{field.uid}" {f:if(condition: '{demand.occupationalField} == {field.uid}', then: 'selected')}>
+                        {field.title}
+                    </option>
+                </f:for>
+            </select>
+        </div>
+
+        <div class="jobs-filter__field">
+            <label for="jobs-filter-location">
+                <f:translate key="filter.location" domain="jobs.messages" />
+            </label>
+            <select id="jobs-filter-location" name="tx_jobs_list[demand][location]">
+                <option value="0"><f:translate key="filter.any" domain="jobs.messages" /></option>
+                <f:for each="{locations}" as="location">
+                    <option value="{location.uid}" {f:if(condition: '{demand.location} == {location.uid}', then: 'selected')}>
+                        {location.name}
+                    </option>
+                </f:for>
+            </select>
+        </div>
+
+        <div class="jobs-filter__field">
+            <label for="jobs-filter-employment">
+                <f:translate key="filter.employmentType" domain="jobs.messages" />
+            </label>
+            <select id="jobs-filter-employment" name="tx_jobs_list[demand][employmentType]">
+                <option value=""><f:translate key="filter.any" domain="jobs.messages" /></option>
+                <f:for each="{employmentTypes}" as="employmentType">
+                    <option value="{employmentType.value}" {f:if(condition: '{demand.employmentType} == {employmentType.value}', then: 'selected')}>
+                        <f:translate key="employment_type.{employmentType.value}" domain="jobs.db" />
+                    </option>
+                </f:for>
+            </select>
+        </div>
+
+        <div class="jobs-filter__field jobs-filter__field--checkbox">
+            <input type="checkbox" id="jobs-filter-remote" value="1"
+                   name="tx_jobs_list[demand][remoteOnly]"
+                   {f:if(condition: demand.remoteOnly, then: 'checked')} />
+            <label for="jobs-filter-remote">
+                <f:translate key="filter.remoteOnly" domain="jobs.messages" />
+            </label>
+        </div>
+
+        <div class="jobs-filter__actions">
+            <button type="submit"><f:translate key="filter.submit" domain="jobs.messages" /></button>
+            <f:if condition="{demand.active}">
+                <f:link.action action="list" class="jobs-filter__reset">
+                    <f:translate key="filter.reset" domain="jobs.messages" />
+                </f:link.action>
+            </f:if>
+        </div>
+    </fieldset>
+</form>
+
+</html>

@@ -1,0 +1,3 @@
+"be_users"
+,"uid","pid","username","password","admin","deleted","disable","workspace_id"
+,1,0,"admin","$argon2i$v=19$m=65536,t=16,p=1$Rk9uc3lHd0hZTTd5MGZVSQ$7dEZmpVqbMWAXd7jq9m3W7Q3gfqTnuMPk8p1r6Gaqqk",1,0,0,0

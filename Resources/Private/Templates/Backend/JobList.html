@@ -1,0 +1,90 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers">
+
+<f:layout name="Module" />
+
+<f:section name="Content">
+    <f:asset.css identifier="jobs-backend" href="EXT:jobs/Resources/Public/Css/Backend.css" />
+
+    <h1><f:translate key="title" domain="jobs.modules.list" /></h1>
+
+    <f:if condition="!{trackingEnabled}">
+        <f:render partial="Backend/DisabledNotice" arguments="{settingsUrl: settingsUrl}" />
+    </f:if>
+
+    <div class="jobs-toolbar">
+        <div class="btn-group" role="group" aria-label="{f:translate(key: 'list.filter.label', domain: 'jobs.backend')}">
+            <f:for each="{filters}" as="option">
+                <a class="btn btn-default {f:if(condition: '{option.value} == {filter}', then: 'active')}"
+                   href="{be:moduleLink(route: 'jobs_list', arguments: {filter: option.value})}"
+                   {f:if(condition: '{option.value} == {filter}', then: 'aria-current="page"')}>
+                    <f:translate key="list.filter.{option.value}" domain="jobs.backend" />
+                </a>
+            </f:for>
+        </div>
+        <span class="jobs-toolbar__count text-body-secondary">
+            <f:translate key="list.count" domain="jobs.backend" arguments="{0: '{jobs -> f:count()}'}" />
+        </span>
+    </div>
+
+    <f:if condition="{jobs}">
+        <f:then>
+            <div class="table-fit">
+                <table class="table table-striped table-hover jobs-table">
+                    <thead>
+                        <tr>
+                            <th><f:translate key="list.column.title" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.identifier" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.level" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.occupationalField" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.locations" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.datePosted" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.validThrough" domain="jobs.backend" /></th>
+                            <th><f:translate key="list.column.status" domain="jobs.backend" /></th>
+                            <th class="text-end {f:if(condition: '!{trackingEnabled}', then: 'jobs-disabled')}"><f:translate key="list.column.views" domain="jobs.backend" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <f:for each="{jobs}" as="job">
+                            <tr>
+                                <td>
+                                    <be:link.editRecord table="tx_jobs_domain_model_job" uid="{job.uid}" returnUrl="{returnUrl}"
+                                                        title="{f:translate(key: 'list.edit', domain: 'jobs.backend')}">
+                                        <core:icon identifier="tcarecords-tx_jobs_domain_model_job-default" size="small" />
+                                        <strong>{job.title}</strong>
+                                    </be:link.editRecord>
+                                </td>
+                                <td><code>{job.identifier}</code></td>
+                                <td>{job.level}</td>
+                                <td>{job.occupationalField}</td>
+                                <td>
+                                    <f:for each="{job.locations}" as="location" iteration="i">{location}<f:if condition="!{i.isLast}">, </f:if></f:for>
+                                </td>
+                                <td><f:if condition="{job.datePosted}">{job.datePosted -> f:format.date(format: 'Y-m-d')}</f:if></td>
+                                <td><f:if condition="{job.validThrough}">{job.validThrough -> f:format.date(format: 'Y-m-d')}</f:if></td>
+                                <td>
+                                    <f:render partial="Backend/StatusBadge" arguments="{status: job.status, expired: job.expired}" />
+                                </td>
+                                <td class="text-end {f:if(condition: '!{trackingEnabled}', then: 'jobs-disabled')}">
+                                    <a class="jobs-table__views" href="{be:moduleLink(route: 'jobs_statistics', arguments: {job: job.uid})}#job-{job.uid}"
+                                       title="{f:translate(key: 'list.showStatistics', domain: 'jobs.backend')}">
+                                        <span class="badge badge-info">{job.views}</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </f:for>
+                    </tbody>
+                </table>
+            </div>
+        </f:then>
+        <f:else>
+            <f:be.infobox state="-1" title="{f:translate(key: 'list.empty.title', domain: 'jobs.backend')}">
+                <f:translate key="list.empty.{filter}" domain="jobs.backend" />
+            </f:be.infobox>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>
