@@ -9,3 +9,4 @@
 /.ddev/config.local.yaml
 /config/system/settings.php
 /config/system/additional.php
+/tailor-version-artefact/

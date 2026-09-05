@@ -24,6 +24,7 @@ jobs:
     env:
       TYPO3_EXTENSION_KEY: jobs
       TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+      TYPO3_EXCLUDE_FROM_PACKAGING: ${{ github.workspace }}/Build/Tailor/ExcludeFromPackaging.php
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,6 +38,8 @@ jobs:
           grep -q "'version' => '${version}'" ext_emconf.php || { echo "ext_emconf.php does not carry ${version}"; fail=1; }
           grep -q "\"version\": \"${version}\"" composer.json || { echo "composer.json does not carry ${version}"; fail=1; }
           grep -q "release=\"${version}\"" Documentation/guides.xml || { echo "Documentation/guides.xml does not carry ${version}"; fail=1; }
+          # The TER rejects an ext_emconf.php that contains declare(strict_types=1).
+          if grep -q "declare(" ext_emconf.php; then echo "ext_emconf.php must not contain a declare() statement"; fail=1; fi
           exit $fail
 
       - name: Read the upload comment from the tag message
@@ -59,8 +62,9 @@ jobs:
         run: composer global require typo3/tailor --prefer-dist --no-progress --no-interaction
 
       - name: Publish to TER
-        # Tailor packs the working directory and honours the export-ignore
-        # entries of .gitattributes, so Build/, Tests/ and config/ stay out.
+        # Tailor packs the working directory minus its default exclusions and
+        # the list in Build/Tailor/ExcludeFromPackaging.php. It does not read
+        # .gitattributes.
         run: |
           "$(composer global config bin-dir --absolute --quiet)/tailor" ter:publish \
             --comment "${{ steps.comment.outputs.comment }}" \

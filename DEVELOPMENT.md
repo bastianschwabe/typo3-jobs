@@ -356,14 +356,24 @@ The workflow needs the repository secret `TYPO3_API_TOKEN`, an access token of
 the TER account that owns the extension key (extensions.typo3.org > My
 Extensions > Access Tokens, scopes `extension:read` and `extension:write`).
 
-To check what the TER will receive without uploading anything:
+To check what the TER will receive without uploading anything, build the
+artefact locally with Tailor and list it:
 
 ```bash
-git archive --format=zip --prefix=jobs/ -o /tmp/jobs.zip HEAD
+TYPO3_EXCLUDE_FROM_PACKAGING="$PWD/Build/Tailor/ExcludeFromPackaging.php" tailor create-artefact 0.1.0 jobs && unzip -l tailor-version-artefact/jobs_0.1.0.zip
 ```
 
-The `export-ignore` entries in `.gitattributes` decide what stays out; Tailor
-honours the same list.
+Tailor does **not** read `.gitattributes`. It uses
+`Build/Tailor/ExcludeFromPackaging.php`, which repeats Tailor's own defaults
+(`Build/`, `Tests/`, `.ddev/`, `.github/`, tooling files) and adds what is
+specific to this repository (`config/`, `DEVELOPMENT.md`, cache files). A custom
+list replaces the defaults instead of extending them, so keep both halves in
+that file. The `export-ignore` entries in `.gitattributes` only shape
+`git archive` and the Composer package.
+
+`ext_emconf.php` must stay free of `declare(strict_types=1)`. The TER parses
+the file with its own reader and rejects the whole upload otherwise; the release
+workflow checks for it before uploading.
 
 The documentation renders in CI with the official renderer. Locally:
 
@@ -389,3 +399,4 @@ Each of these cost a debugging round and now has a regression test:
 | `typo3 setup` failed with "no argument named $configuration" | The dashboard's compiler pass injects `WidgetConfigurationInterface $configuration` by name; every widget constructor has to accept it. |
 | Job views were never counted | The detail plugin is cached, so its controller only runs on a cache miss. Views are counted by the `JobViewTracker` middleware, which sees every request. |
 | Middleware order test asserted the wrong direction | `MiddlewareStackResolver::resolve()` returns the stack reversed: the dispatcher runs the last entry first, so "after" means a lower index. |
+| TER upload failed with "Details could not be extracted from the provided file" | `ext_emconf.php` carried `declare(strict_types=1)`, which the TER's emconf reader cannot parse. Removed; the release workflow now refuses to upload if it comes back. |
