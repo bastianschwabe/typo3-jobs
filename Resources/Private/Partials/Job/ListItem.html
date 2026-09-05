@@ -1,20 +1,29 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
+<f:comment>
+    The title link is stretched over the whole item by CSS, so the entire row
+    reacts to hover and click. The explicit "View job" link stays for screen
+    readers and for the structural stylesheet, which has no stretched link.
+</f:comment>
 <article class="job-teaser">
-    <h3 class="job-teaser__title">
-        <f:link.action action="show" arguments="{job: job}"
-                       pageUid="{settings.detailPid}">{job.title}</f:link.action>
-    </h3>
+    <div class="job-teaser__body">
+        <h3 class="job-teaser__title">
+            <f:link.action action="show" arguments="{job: job}"
+                           pageUid="{settings.detailPid}"
+                           class="job-teaser__link">{job.title}</f:link.action>
+        </h3>
 
-    <f:if condition="{job.teaser}">
-        <p class="job-teaser__text">{job.teaser}</p>
-    </f:if>
+        <f:if condition="{job.teaser}">
+            <p class="job-teaser__text">{job.teaser}</p>
+        </f:if>
 
-    <f:render partial="Job/Meta" arguments="{job: job}" />
+        <f:render partial="Job/Meta" arguments="{job: job}" />
+    </div>
 
     <f:link.action action="show" arguments="{job: job}"
-                   pageUid="{settings.detailPid}" class="job-teaser__more">
+                   pageUid="{settings.detailPid}" class="job-teaser__more"
+                   tabindex="-1" aria-hidden="true">
         <f:translate key="list.more" domain="jobs.messages" />
     </f:link.action>
 </article>

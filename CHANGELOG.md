@@ -4,6 +4,29 @@ All notable changes to this extension are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Frontend design for list and detail view (`Resources/Public/Css/Jobs.css`):
+  system font stack, neutral grays, container-query based layout, all colors
+  and radii exposed as CSS custom properties on `.jobs`.
+- Structural stylesheet `JobsBasic.css` without colors, fonts or rounded
+  corners.
+- Site setting `jobs.stylesheet` (`default`, `basic`, `none`) that selects
+  which stylesheet the Fluid layout loads. Defaults to `default`.
+- Detail view: summary card with salary, application deadline, reference and
+  the apply button; contact, location and company as cards in a side column.
+- Accessible labels for the pagination links.
+
+### Changed
+
+- The list item is now clickable as a whole; the "View job" link is hidden
+  from assistive technology, because the title link already leads there.
+- Remote positions are shown next to the locations instead of as a separate
+  meta entry.
+- The development site no longer carries its own demo CSS for the plugins.
+
 ## [0.1.0] – 2026-09-05
 
 First public version.

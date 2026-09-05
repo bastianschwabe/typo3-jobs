@@ -3,7 +3,7 @@
 
 <div class="job-company">
     <f:if condition="{company.logo}">
-        <f:image image="{company.logo}" maxWidth="320" loading="lazy"
+        <f:image image="{company.logo}" maxWidth="320" maxHeight="120" loading="lazy"
                  alt="{company.title}" class="job-company__logo" />
     </f:if>
 
@@ -18,7 +18,7 @@
     </f:if>
     <f:if condition="{company.urlWebsite}">
         <p class="job-company__website">
-            <f:link.typolink parameter="{company.urlWebsite}">{company.title}</f:link.typolink>
+            <f:link.typolink parameter="{company.urlWebsite}" class="job-company__link">{company.title}</f:link.typolink>
         </p>
     </f:if>
 </div>

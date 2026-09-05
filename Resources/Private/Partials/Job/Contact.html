@@ -7,23 +7,29 @@
                  alt="{contact.fullName}" class="job-contact__photo" />
     </f:if>
 
-    <p class="job-contact__name">{contact.fullName}</p>
-    <f:if condition="{contact.role}">
-        <p class="job-contact__role">{contact.role}</p>
-    </f:if>
-    <f:if condition="{contact.description}">
-        <p class="job-contact__description">{contact.description -> f:format.nl2br()}</p>
-    </f:if>
-    <f:if condition="{contact.phone}">
-        <p class="job-contact__phone">
-            <a href="tel:{contact.phone}">{contact.phone}</a>
-        </p>
-    </f:if>
-    <f:if condition="{contact.email}">
-        <p class="job-contact__email">
-            <f:link.email email="{contact.email}" />
-        </p>
-    </f:if>
+    <div class="job-contact__body">
+        <p class="job-contact__name">{contact.fullName}</p>
+        <f:if condition="{contact.role}">
+            <p class="job-contact__role">{contact.role}</p>
+        </f:if>
+        <f:if condition="{contact.description}">
+            <p class="job-contact__description">{contact.description -> f:format.nl2br()}</p>
+        </f:if>
+        <f:if condition="{contact.phone} || {contact.email}">
+            <ul class="job-contact__channels">
+                <f:if condition="{contact.phone}">
+                    <li class="job-contact__phone">
+                        <a href="tel:{contact.phone}">{contact.phone}</a>
+                    </li>
+                </f:if>
+                <f:if condition="{contact.email}">
+                    <li class="job-contact__email">
+                        <f:link.email email="{contact.email}" />
+                    </li>
+                </f:if>
+            </ul>
+        </f:if>
+    </div>
 </div>
 
 </html>

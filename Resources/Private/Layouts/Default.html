@@ -1,5 +1,24 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:comment>
+    The stylesheet is chosen by the site setting jobs.stylesheet (mapped to
+    settings.stylesheet). "default" is the shipped design, "basic" a purely
+    structural sheet, "none" loads nothing. The shared identifier means the
+    sheet is emitted once even when list and detail plugin sit on one page.
+    An unknown or empty value falls back to the shipped design, so a template
+    override that does not set it still looks finished.
+</f:comment>
+<f:switch expression="{settings.stylesheet}">
+    <f:case value="none"></f:case>
+    <f:case value="basic">
+        <f:asset.css identifier="jobs" href="EXT:jobs/Resources/Public/Css/JobsBasic.css" />
+    </f:case>
+    <f:defaultCase>
+        <f:asset.css identifier="jobs" href="EXT:jobs/Resources/Public/Css/Jobs.css" />
+    </f:defaultCase>
+</f:switch>
+
 <div class="jobs">
     <f:render section="Main" />
 </div>

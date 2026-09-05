@@ -1,23 +1,29 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
+<f:comment>
+    One definition list for both views. The list item renders it as an inline
+    row (terms visually hidden, values separated by dots), the detail header
+    as a grid of labelled facts. The split is done in CSS only, so an override
+    can keep using a single partial.
+</f:comment>
 <dl class="job-meta">
     <f:if condition="{job.occupationalField}">
-        <div class="job-meta__entry">
+        <div class="job-meta__entry job-meta__entry--field">
             <dt><f:translate key="job.occupationalField" domain="jobs.messages" /></dt>
             <dd>{job.occupationalField.title}</dd>
         </div>
     </f:if>
 
     <f:if condition="{job.level}">
-        <div class="job-meta__entry">
+        <div class="job-meta__entry job-meta__entry--level">
             <dt><f:translate key="job.level" domain="jobs.messages" /></dt>
             <dd>{job.level.title}</dd>
         </div>
     </f:if>
 
     <f:if condition="{job.employmentTypes}">
-        <div class="job-meta__entry">
+        <div class="job-meta__entry job-meta__entry--employment">
             <dt><f:translate key="job.employmentType" domain="jobs.messages" /></dt>
             <dd>
                 <f:for each="{job.employmentTypes}" as="employmentType" iteration="i">
@@ -27,26 +33,28 @@
         </div>
     </f:if>
 
-    <f:if condition="{job.locations}">
-        <div class="job-meta__entry">
+    <f:comment>
+        A remote position is listed with the locations: schema.org allows
+        TELECOMMUTE next to physical locations (hybrid), and a fully remote
+        job then simply reads "Remote" here.
+    </f:comment>
+    <f:if condition="{job.locations} || {job.remote}">
+        <div class="job-meta__entry job-meta__entry--locations">
             <dt><f:translate key="job.locations" domain="jobs.messages" /></dt>
             <dd>
                 <f:for each="{job.locations}" as="location" iteration="i">
                     {location.city}<f:if condition="{i.isLast} == 0">, </f:if>
                 </f:for>
+                <f:if condition="{job.remote}">
+                    <f:if condition="{job.locations}"><span class="job-meta__separator">, </span></f:if>
+                    <span class="job-meta__remote"><f:translate key="job.remote" domain="jobs.messages" /></span>
+                </f:if>
             </dd>
         </div>
     </f:if>
 
-    <f:if condition="{job.remote}">
-        <div class="job-meta__entry">
-            <dt><f:translate key="job.remote" domain="jobs.messages" /></dt>
-            <dd><f:translate key="filter.remoteOnly" domain="jobs.messages" /></dd>
-        </div>
-    </f:if>
-
     <f:if condition="{job.datePosted}">
-        <div class="job-meta__entry">
+        <div class="job-meta__entry job-meta__entry--date">
             <dt><f:translate key="job.publishedOn" domain="jobs.messages" /></dt>
             <dd><time datetime="{job.datePosted -> f:format.date(format: 'Y-m-d')}">
                 <f:format.date format="d.m.Y">{job.datePosted}</f:format.date>

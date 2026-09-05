@@ -155,6 +155,18 @@
         <source>%s jobs found</source>
         <target>%s Stellen gefunden</target>
       </trans-unit>
+      <trans-unit id="pagination.label">
+        <source>Pagination</source>
+        <target>Seitennavigation</target>
+      </trans-unit>
+      <trans-unit id="pagination.next">
+        <source>Next page</source>
+        <target>Nächste Seite</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous">
+        <source>Previous page</source>
+        <target>Vorherige Seite</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

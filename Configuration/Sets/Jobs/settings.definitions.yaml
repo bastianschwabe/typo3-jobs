@@ -18,6 +18,16 @@ settings:
     type: int
     default: 10
     category: jobs.view
+  # "default" loads the shipped design, "basic" only a structural stylesheet
+  # (no colors, fonts or rounded corners), "none" loads nothing at all.
+  jobs.stylesheet:
+    type: string
+    default: default
+    enum:
+      - default
+      - basic
+      - none
+    category: jobs.view
   jobs.organization.name:
     type: string
     default: ''

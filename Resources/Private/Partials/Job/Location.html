@@ -9,16 +9,19 @@
         <f:if condition="{location.city}">{location.zip} {location.city}<br /></f:if>
         <f:if condition="{location.addressRegion}">{location.addressRegion}<br /></f:if>
     </address>
-    <f:if condition="{location.phone}">
-        <p class="job-location__phone">
-            <f:translate key="contact.phone" domain="jobs.messages" />:
-            <a href="tel:{location.phone}">{location.phone}</a>
-        </p>
-    </f:if>
-    <f:if condition="{location.email}">
-        <p class="job-location__email">
-            <f:link.email email="{location.email}" />
-        </p>
+    <f:if condition="{location.phone} || {location.email}">
+        <ul class="job-location__channels">
+            <f:if condition="{location.phone}">
+                <li class="job-location__phone">
+                    <a href="tel:{location.phone}">{location.phone}</a>
+                </li>
+            </f:if>
+            <f:if condition="{location.email}">
+                <li class="job-location__email">
+                    <f:link.email email="{location.email}" />
+                </li>
+            </f:if>
+        </ul>
     </f:if>
 </div>
 

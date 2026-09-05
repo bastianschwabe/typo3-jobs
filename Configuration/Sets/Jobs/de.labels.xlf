@@ -39,6 +39,14 @@
         <source>Jobs per page</source>
         <target>Jobs pro Seite</target>
       </trans-unit>
+      <trans-unit id="settings.jobs.stylesheet">
+        <source>Stylesheet</source>
+        <target>Stylesheet</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.stylesheet">
+        <source>"default" loads the shipped design (system fonts, neutral grays, overridable via CSS custom properties). "basic" loads only a structural stylesheet without colors, fonts or rounded corners. "none" loads no stylesheet at all.</source>
+        <target>„default“ lädt das mitgelieferte Design (Systemschriften, neutrale Grautöne, per CSS Custom Properties anpassbar). „basic“ lädt nur ein strukturelles Stylesheet ohne Farben, Schriften und runde Ecken. „none“ lädt gar kein Stylesheet.</target>
+      </trans-unit>
       <trans-unit id="settings.jobs.organization.name">
         <source>Fallback organization name</source>
         <target>Firmenname (Fallback)</target>

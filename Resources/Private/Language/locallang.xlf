@@ -117,6 +117,15 @@
       <trans-unit id="list.results">
         <source>%s jobs found</source>
       </trans-unit>
+      <trans-unit id="pagination.label">
+        <source>Pagination</source>
+      </trans-unit>
+      <trans-unit id="pagination.next">
+        <source>Next page</source>
+      </trans-unit>
+      <trans-unit id="pagination.previous">
+        <source>Previous page</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -31,6 +31,21 @@ All settings live in the :guilabel:`Jobs` site set and can be edited per site in
 
         Number of jobs per page in the list view.
 
+    ..  confval:: jobs.stylesheet
+        :type: string
+        :default: default
+
+        Which stylesheet the plugins load. See :ref:`styling`.
+
+        ``default``
+            The shipped design: system fonts, neutral grays, adjustable
+            through CSS custom properties.
+        ``basic``
+            A structural stylesheet only. No colors, fonts or rounded
+            corners; borders use the site's text color.
+        ``none``
+            No stylesheet at all. The markup stays the same.
+
     ..  confval:: jobs.organization.name
         :type: string
         :default: (empty)
@@ -88,6 +103,75 @@ cacheable, and the list works without JavaScript:
     path, which keeps the list cacheable at the price of a much larger route
     configuration. That is a worthwhile addition once the filter set is stable.
 
+..  _styling:
+
+Styling
+=======
+
+The extension ships two stylesheets under :file:`Resources/Public/Css/`. Which
+one is loaded is decided by :confval:`jobs.stylesheet`; the Fluid layout adds
+it through :html:`<f:asset.css>`, so it only appears on pages that contain one
+of the plugins and is emitted once even when list and detail sit on the same
+page.
+
+Default design
+--------------
+
+:file:`Jobs.css` is meant to drop into an existing site without a fight: it
+uses the system font stack, neutral grays and no external assets. All colors,
+radii and the font are CSS custom properties on the :css:`.jobs` wrapper, so a
+site adjusts them without overriding selectors:
+
+..  code-block:: css
+
+    .jobs {
+        --jobs-font-family: inherit;       /* use the site's font */
+        --jobs-color-accent: #0a3d62;      /* buttons, current page */
+        --jobs-color-on-accent: #ffffff;
+        --jobs-radius: 0;                  /* square corners */
+    }
+
+The complete list of properties is at the top of :file:`Jobs.css`:
+
+..  list-table::
+    :header-rows: 1
+
+    *   -   Property
+        -   Used for
+    *   -   ``--jobs-font-family``, ``--jobs-font-size``, ``--jobs-line-height``
+        -   Typography of the whole plugin output
+    *   -   ``--jobs-color-text``, ``--jobs-color-muted``, ``--jobs-color-faint``
+        -   Text, secondary text, placeholders and separators
+    *   -   ``--jobs-color-border``, ``--jobs-color-border-strong``
+        -   Card borders, dividers, form field borders
+    *   -   ``--jobs-color-surface``, ``--jobs-color-surface-raised``, ``--jobs-color-hover``
+        -   Filter and summary card background, list background, hover state
+    *   -   ``--jobs-color-accent``, ``--jobs-color-on-accent``, ``--jobs-color-focus``
+        -   Buttons, current pagination page, focus rings
+    *   -   ``--jobs-radius``, ``--jobs-radius-small``
+        -   Cards and list container; form fields, buttons and badges
+
+Layout breakpoints are container queries on :css:`.jobs`, so the two-column
+detail view and the four-column filter switch on based on the width of the
+column the plugin is placed in, not on the viewport.
+
+Structural stylesheet
+---------------------
+
+:file:`JobsBasic.css` only arranges things: the filter fields wrap in a row,
+the meta data sits in a line, the detail sections have some spacing. Borders
+are :css:`1px solid` in the current text color, there are no rounded corners,
+colors or font settings. Use it when the site brings its own visual language
+and you only want the plugin to be laid out sensibly.
+
+No stylesheet
+-------------
+
+With ``none`` nothing is loaded. The markup uses BEM-style class names
+(:css:`.jobs-filter__field`, :css:`.job-teaser__title`,
+:css:`.job-detail__card`, ...) that are stable across both shipped sheets, so a
+site stylesheet can target them directly.
+
 Overriding templates
 ====================
 
@@ -100,3 +184,7 @@ Add your own paths with a higher index in your site package:
         partialRootPaths.10 = EXT:my_sitepackage/Resources/Private/Extensions/Jobs/Partials/
         layoutRootPaths.10 = EXT:my_sitepackage/Resources/Private/Extensions/Jobs/Layouts/
     }
+
+The stylesheet is loaded in :file:`Layouts/Default.html`. An overridden layout
+that leaves out the :html:`<f:switch>` block loads nothing, which is the same
+as setting :confval:`jobs.stylesheet` to ``none``.

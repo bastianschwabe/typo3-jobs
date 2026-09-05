@@ -7,6 +7,14 @@
 <f:section name="Main">
     <jobs:jsonLd data="{schema}" />
 
+    <f:comment>
+        The apply link goes through the "apply" action, which records the
+        click and redirects to the application URL or e-mail address.
+        rel=nofollow keeps crawlers from following the proxy; the JSON-LD
+        carries the real target.
+    </f:comment>
+    <f:variable name="canApply" value="{f:if(condition: '{job.applicationUrl} || {job.applicationEmail}', then: 1, else: 0)}" />
+
     <article class="job-detail">
         <header class="job-detail__header">
             <h2 class="job-detail__title">{job.title}</h2>
@@ -22,124 +30,157 @@
             </p>
         </f:if>
 
-        <f:if condition="{job.images}">
-            <div class="job-detail__images">
-                <f:for each="{job.images}" as="image">
-                    <f:image image="{image}" maxWidth="1200" loading="lazy" />
-                </f:for>
+        <div class="job-detail__layout">
+            <div class="job-detail__main">
+                <f:if condition="{job.images}">
+                    <div class="job-detail__images">
+                        <f:for each="{job.images}" as="image">
+                            <f:image image="{image}" maxWidth="1200" loading="lazy" class="job-detail__image" />
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <section class="job-detail__section job-detail__description">
+                    <h3 class="job-detail__heading"><f:translate key="job.description" domain="jobs.messages" /></h3>
+                    <div class="job-detail__prose">
+                        <f:format.html>{job.description}</f:format.html>
+                    </div>
+                </section>
+
+                <f:if condition="{job.educationRequirements} || {job.experienceRequirements} || {job.effectiveExperienceMonths}">
+                    <section class="job-detail__section job-detail__requirements">
+                        <h3 class="job-detail__heading"><f:translate key="job.requirements" domain="jobs.messages" /></h3>
+
+                        <f:if condition="{job.educationRequirements}">
+                            <div class="job-detail__requirement">
+                                <h4 class="job-detail__subheading"><f:translate key="job.education" domain="jobs.messages" /></h4>
+                                <p>{job.educationRequirements -> f:format.nl2br()}</p>
+                            </div>
+                        </f:if>
+
+                        <f:if condition="{job.effectiveExperienceMonths} || {job.experienceRequirements}">
+                            <div class="job-detail__requirement">
+                                <h4 class="job-detail__subheading"><f:translate key="job.experience" domain="jobs.messages" /></h4>
+                                <f:if condition="{job.effectiveExperienceMonths}">
+                                    <p>
+                                        <f:translate key="job.experienceMonths" domain="jobs.messages"
+                                                     arguments="{0: job.effectiveExperienceMonths}" />
+                                    </p>
+                                </f:if>
+                                <f:if condition="{job.experienceRequirements}">
+                                    <p>{job.experienceRequirements -> f:format.nl2br()}</p>
+                                </f:if>
+                            </div>
+                        </f:if>
+                    </section>
+                </f:if>
+
+                <f:if condition="{job.downloads}">
+                    <section class="job-detail__section job-detail__downloads">
+                        <h3 class="job-detail__heading"><f:translate key="job.downloads" domain="jobs.messages" /></h3>
+                        <ul class="job-detail__download-list">
+                            <f:for each="{job.downloads}" as="download">
+                                <li class="job-detail__download">
+                                    <f:link.file file="{download}" class="job-detail__download-link">
+                                        {download.originalResource.title -> f:or(alternative: download.originalResource.name)}
+                                    </f:link.file>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </section>
+                </f:if>
             </div>
-        </f:if>
 
-        <section class="job-detail__description">
-            <h3><f:translate key="job.description" domain="jobs.messages" /></h3>
-            <f:format.html>{job.description}</f:format.html>
-        </section>
+            <aside class="job-detail__aside">
+                <f:comment>
+                    The summary card gathers what a candidate decides on:
+                    salary, deadline, reference and the apply button.
+                </f:comment>
+                <f:if condition="{canApply} || {job.baseSalary} || {job.validThrough} || {job.identifier}">
+                    <section class="job-detail__card job-detail__summary">
+                        <f:if condition="{job.baseSalary} || {job.validThrough} || {job.identifier}">
+                            <dl class="job-facts">
+                                <f:if condition="{job.baseSalary}">
+                                    <div class="job-facts__entry job-detail__salary">
+                                        <dt><f:translate key="job.salary" domain="jobs.messages" /></dt>
+                                        <dd>
+                                            <f:if condition="{job.baseSalaryValue}">
+                                                <f:then>
+                                                    {job.baseSalaryValue -> f:format.number(decimals: 0)}&nbsp;{job.baseSalaryCurrency}
+                                                </f:then>
+                                                <f:else>
+                                                    {job.baseSalaryMin -> f:format.number(decimals: 0)}&nbsp;&ndash;&nbsp;{job.baseSalaryMax -> f:format.number(decimals: 0)}&nbsp;{job.baseSalaryCurrency}
+                                                </f:else>
+                                            </f:if>
+                                            <span class="job-facts__unit"><f:translate key="salary_unit.{job.baseSalaryUnit}" domain="jobs.db" /></span>
+                                        </dd>
+                                    </div>
+                                </f:if>
 
-        <f:if condition="{job.educationRequirements} || {job.experienceRequirements} || {job.effectiveExperienceMonths}">
-            <section class="job-detail__requirements">
-                <h3><f:translate key="job.requirements" domain="jobs.messages" /></h3>
+                                <f:if condition="{job.validThrough}">
+                                    <div class="job-facts__entry job-detail__valid-through">
+                                        <dt><f:translate key="job.validThrough" domain="jobs.messages" /></dt>
+                                        <dd><time datetime="{job.validThrough -> f:format.date(format: 'Y-m-d')}">
+                                            <f:format.date format="d.m.Y">{job.validThrough}</f:format.date>
+                                        </time></dd>
+                                    </div>
+                                </f:if>
 
-                <f:if condition="{job.educationRequirements}">
-                    <div class="job-detail__requirement">
-                        <h4><f:translate key="job.education" domain="jobs.messages" /></h4>
-                        <p>{job.educationRequirements -> f:format.nl2br()}</p>
-                    </div>
+                                <f:if condition="{job.identifier}">
+                                    <div class="job-facts__entry job-detail__identifier">
+                                        <dt><f:translate key="job.identifier" domain="jobs.messages" /></dt>
+                                        <dd>{job.identifier}</dd>
+                                    </div>
+                                </f:if>
+                            </dl>
+                        </f:if>
+
+                        <f:if condition="{canApply}">
+                            <p class="job-detail__apply">
+                                <f:link.action action="apply" arguments="{job: job}"
+                                               class="job-detail__apply-link" rel="nofollow">
+                                    <f:translate key="job.apply" domain="jobs.messages" />
+                                </f:link.action>
+                            </p>
+                        </f:if>
+                    </section>
                 </f:if>
 
-                <f:if condition="{job.effectiveExperienceMonths}">
-                    <div class="job-detail__requirement">
-                        <h4><f:translate key="job.experience" domain="jobs.messages" /></h4>
-                        <p>
-                            <f:translate key="job.experienceMonths" domain="jobs.messages"
-                                         arguments="{0: job.effectiveExperienceMonths}" />
-                        </p>
-                    </div>
+                <f:if condition="{job.contacts}">
+                    <section class="job-detail__card job-detail__contacts">
+                        <h3 class="job-detail__card-heading"><f:translate key="job.contacts" domain="jobs.messages" /></h3>
+                        <f:for each="{job.contacts}" as="contact">
+                            <f:render partial="Job/Contact" arguments="{contact: contact}" />
+                        </f:for>
+                    </section>
                 </f:if>
 
-                <f:if condition="{job.experienceRequirements}">
-                    <p>{job.experienceRequirements -> f:format.nl2br()}</p>
+                <f:if condition="{job.locations}">
+                    <section class="job-detail__card job-detail__locations">
+                        <h3 class="job-detail__card-heading"><f:translate key="job.locations" domain="jobs.messages" /></h3>
+                        <f:for each="{job.locations}" as="location">
+                            <f:render partial="Job/Location" arguments="{location: location}" />
+                        </f:for>
+                    </section>
                 </f:if>
-            </section>
-        </f:if>
 
-        <f:if condition="{job.baseSalary}">
-            <section class="job-detail__salary">
-                <h3><f:translate key="job.salary" domain="jobs.messages" /></h3>
-                <p>
-                    <f:if condition="{job.baseSalaryValue}">
-                        <f:then>
-                            {job.baseSalaryValue -> f:format.number(decimals: 0)}&nbsp;{job.baseSalaryCurrency}
-                        </f:then>
-                        <f:else>
-                            {job.baseSalaryMin -> f:format.number(decimals: 0)}&nbsp;&ndash;&nbsp;{job.baseSalaryMax -> f:format.number(decimals: 0)}&nbsp;{job.baseSalaryCurrency}
-                        </f:else>
-                    </f:if>
-                    <f:translate key="salary_unit.{job.baseSalaryUnit}" domain="jobs.db" />
-                </p>
-            </section>
-        </f:if>
-
-        <f:if condition="{job.locations}">
-            <section class="job-detail__locations">
-                <h3><f:translate key="job.locations" domain="jobs.messages" /></h3>
-                <f:for each="{job.locations}" as="location">
-                    <f:render partial="Job/Location" arguments="{location: location}" />
-                </f:for>
-            </section>
-        </f:if>
-
-        <f:if condition="{job.downloads}">
-            <section class="job-detail__downloads">
-                <h3><f:translate key="job.downloads" domain="jobs.messages" /></h3>
-                <ul>
-                    <f:for each="{job.downloads}" as="download">
-                        <li>
-                            <f:link.file file="{download}">
-                                {download.originalResource.title -> f:or(alternative: download.originalResource.name)}
-                            </f:link.file>
-                        </li>
-                    </f:for>
-                </ul>
-            </section>
-        </f:if>
-
-        <f:if condition="{job.contacts}">
-            <section class="job-detail__contacts">
-                <h3><f:translate key="job.contacts" domain="jobs.messages" /></h3>
-                <f:for each="{job.contacts}" as="contact">
-                    <f:render partial="Job/Contact" arguments="{contact: contact}" />
-                </f:for>
-            </section>
-        </f:if>
-
-        <f:if condition="{job.primaryCompanyProfile}">
-            <section class="job-detail__company">
-                <h3><f:translate key="job.company" domain="jobs.messages" /></h3>
-                <f:render partial="Job/Company" arguments="{company: job.primaryCompanyProfile}" />
-            </section>
-        </f:if>
-
-        <f:comment>
-            The link goes through the "apply" action, which records the click
-            and redirects to the application URL or e-mail address. rel=nofollow
-            keeps crawlers from following the proxy; the JSON-LD carries the
-            real target.
-        </f:comment>
-        <f:if condition="{job.applicationUrl} || {job.applicationEmail}">
-            <p class="job-detail__apply">
-                <f:link.action action="apply" arguments="{job: job}"
-                               class="job-detail__apply-link" rel="nofollow">
-                    <f:translate key="job.apply" domain="jobs.messages" />
-                </f:link.action>
-            </p>
-        </f:if>
+                <f:if condition="{job.primaryCompanyProfile}">
+                    <section class="job-detail__card job-detail__company">
+                        <h3 class="job-detail__card-heading"><f:translate key="job.company" domain="jobs.messages" /></h3>
+                        <f:render partial="Job/Company" arguments="{company: job.primaryCompanyProfile}" />
+                    </section>
+                </f:if>
+            </aside>
+        </div>
 
         <f:if condition="{settings.listPid}">
-            <p class="job-detail__back">
-                <f:link.page pageUid="{settings.listPid}">
-                    <f:translate key="job.back" domain="jobs.messages" />
-                </f:link.page>
-            </p>
+            <footer class="job-detail__footer">
+                <p class="job-detail__back">
+                    <f:link.page pageUid="{settings.listPid}" class="job-detail__back-link">
+                        <f:translate key="job.back" domain="jobs.messages" />
+                    </f:link.page>
+                </p>
+            </footer>
         </f:if>
     </article>
 </f:section>

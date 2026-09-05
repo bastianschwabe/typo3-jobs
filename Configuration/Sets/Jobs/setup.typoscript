@@ -13,6 +13,9 @@ plugin.tx_jobs {
         detailPid = {$jobs.detailPid}
         itemsPerPage = {$jobs.itemsPerPage}
 
+        # Which stylesheet the Fluid layout loads: default, basic or none.
+        stylesheet = {$jobs.stylesheet}
+
         # Fallback hiringOrganization when a job has no company profile assigned.
         organization {
             name = {$jobs.organization.name}

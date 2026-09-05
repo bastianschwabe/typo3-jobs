@@ -11,27 +11,29 @@
 }" />
 
 <f:if condition="{pagination.lastPageNumber} > 1">
-    <nav class="jobs-pagination" aria-label="Pagination">
-        <ul>
+    <nav class="jobs-pagination" aria-label="{f:translate(key: 'pagination.label', domain: 'jobs.messages')}">
+        <ul class="jobs-pagination__list">
             <f:if condition="{pagination.previousPageNumber}">
-                <li>
-                    <f:link.action action="list" rel="prev"
-                                   arguments="{currentPage: pagination.previousPageNumber, demand: demandArguments}">&laquo;</f:link.action>
+                <li class="jobs-pagination__item">
+                    <f:link.action action="list" rel="prev" class="jobs-pagination__link jobs-pagination__link--prev"
+                                   arguments="{currentPage: pagination.previousPageNumber, demand: demandArguments}"
+                                   aria-label="{f:translate(key: 'pagination.previous', domain: 'jobs.messages')}">&lsaquo;</f:link.action>
                 </li>
             </f:if>
 
             <f:for each="{pagination.allPageNumbers}" as="page">
-                <li>
-                    <f:link.action action="list"
+                <li class="jobs-pagination__item">
+                    <f:link.action action="list" class="jobs-pagination__link"
                                    arguments="{currentPage: page, demand: demandArguments}"
                                    aria-current="{f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'page')}">{page}</f:link.action>
                 </li>
             </f:for>
 
             <f:if condition="{pagination.nextPageNumber}">
-                <li>
-                    <f:link.action action="list" rel="next"
-                                   arguments="{currentPage: pagination.nextPageNumber, demand: demandArguments}">&raquo;</f:link.action>
+                <li class="jobs-pagination__item">
+                    <f:link.action action="list" rel="next" class="jobs-pagination__link jobs-pagination__link--next"
+                                   arguments="{currentPage: pagination.nextPageNumber, demand: demandArguments}"
+                                   aria-label="{f:translate(key: 'pagination.next', domain: 'jobs.messages')}">&rsaquo;</f:link.action>
                 </li>
             </f:if>
         </ul>

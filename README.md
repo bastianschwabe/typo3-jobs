@@ -44,6 +44,20 @@ Then assign the **Jobs** site set to your site and point it at a storage folder.
    organization, so a job without a company profile still emits a valid
    `hiringOrganization`.
 
+## Frontend
+
+The plugins ship with a finished design: system fonts, neutral grays, no
+external assets, so it blends into most sites as it is. Every color, radius
+and the font are CSS custom properties on the `.jobs` wrapper:
+
+```css
+.jobs { --jobs-font-family: inherit; --jobs-color-accent: #0a3d62; --jobs-radius: 0; }
+```
+
+The site setting **Stylesheet** (`jobs.stylesheet`) switches between
+`default`, `basic` (structure only, no colors or rounded corners) and `none`.
+The markup and its BEM class names stay the same in all three modes.
+
 ## Structured data
 
 The detail view emits a single `<script type="application/ld+json">` block.
