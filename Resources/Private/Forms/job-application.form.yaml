@@ -1,0 +1,222 @@
+# Example: an application form for EXT:jobs.
+#
+# From the moment "jobs.applicationFormPid" points at the page this form sits
+# on, the "Apply now" button of every job leads here. The job travels with the
+# form, and the application is sent to the address of that job.
+#
+# EXT:jobs reads three things out of the form:
+#
+#   * the Hidden element "jobUid", which carries the uid of the job
+#   * the Text element "jobTitle", pre-filled with the job's title
+#   * "jobsRecipient" and "jobsReplyTo" on the two email finishers below, each
+#     of which replaces one address list with the address of the applied-for
+#     job
+#
+# Everything else is ordinary EXT:form. Without a job — the form opened
+# directly, or the job hidden, deleted or expired — the recipients written
+# below are used as they are.
+#
+# The definition is English. Its German translation is not a second definition
+# but a set of translation keys in Resources/Private/Language/Form/, which the
+# form set Configuration/Form/ApplicationForm/config.yaml registers along with
+# this file.
+renderingOptions:
+  submitButtonLabel: 'Submit application'
+  # EXT:form's own check against robots: a randomly named field is drawn
+  # off-screen and has to stay empty. Enabled by default since TYPO3 v14;
+  # spelled out here so that the example carries it visibly.
+  honeypot:
+    enable: true
+    formElementToUse: Honeypot
+type: Form
+identifier: job-application
+label: 'Job application'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Your application for {jobTitle}'
+      recipients:
+        '{email}': '{firstName} {lastName}'
+      senderAddress: noreply@example.org
+      senderName: 'Example Company Recruiting'
+      jobsReplyTo: true
+      replyToRecipients:
+        careers@example.org: ''
+      format: html
+      attachUploads: true
+    identifier: EmailToSender
+  -
+    options:
+      subject: 'Application received: {jobTitle}'
+      senderAddress: 'noreply@example.org'
+      senderName: 'Example Company Website'
+      replyToRecipients:
+        '{email}': '{firstName} {lastName}'
+      format: html
+      attachUploads: true
+      translation:
+        language: default
+      recipients:
+        careers@example.org: 'Recruiting'
+      jobsRecipient: true
+    identifier: EmailToReceiver
+  -
+    options:
+      # UID of the page that thanks the applicant.
+      pageUid: '123'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: ''
+      nextButtonLabel: 'Submit'
+    type: Page
+    identifier: page-1
+    label: 'Application'
+    renderables:
+      -
+        properties:
+          text: 'Fields marked with * are required.'
+        type: StaticText
+        identifier: statictext-required
+        label: ''
+      -
+        type: Hidden
+        identifier: jobUid
+        defaultValue: ''
+      -
+        defaultValue: ''
+        type: Text
+        identifier: firstName
+        label: 'First name'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: given-name
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: lastName
+        label: 'Last name'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: family-name
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        type: Fieldset
+        identifier: fieldset-contact
+        label: 'How to reach you'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: phone
+            label: Phone
+            properties:
+              fluidAdditionalAttributes:
+                autocomplete: tel
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: email
+            label: E-mail
+            properties:
+              fluidAdditionalAttributes:
+                autocomplete: email
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                identifier: EmailAddress
+      -
+        type: Fieldset
+        identifier: fieldset-position
+        label: 'The position'
+        renderables:
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                step: 1
+            type: Date
+            identifier: availableFrom
+            label: 'Available from'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: jobTitle
+            label: 'Job title'
+      -
+        type: Fieldset
+        identifier: fieldset-documents
+        label: Documents
+        renderables:
+          -
+            properties:
+              # A folder that exists in your file storage.
+              saveToFileMount: '1:/user_upload/'
+              allowedMimeTypes:
+                - application/msword
+                - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                - application/pdf
+            type: FileUpload
+            identifier: resume
+            label: Resume
+          -
+            properties:
+              saveToFileMount: '1:/user_upload/'
+              allowedMimeTypes:
+                - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                - application/pdf
+            type: FileUpload
+            identifier: uploads
+            label: 'Further documents (optional)'
+      -
+        type: Fieldset
+        identifier: fieldset-privacy
+        label: 'Privacy'
+        renderables:
+          -
+            label: 'Privacy policy'
+            properties:
+              # Content element carrying the privacy policy.
+              contentElementUid: '456'
+            type: ContentElement
+            identifier: contentelement-privacy
+          -
+            type: Checkbox
+            identifier: privacyAccepted
+            label: 'Read and accepted'
+            properties:
+              elementDescription: ''
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        properties:
+          text: 'After clicking "Submit" you will see your entries once more for checking.'
+        type: StaticText
+        identifier: statictext-summary
+        label: ''
+  -
+    renderingOptions:
+      previousButtonLabel: 'Edit my details'
+      nextButtonLabel: 'Submit now'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: Summary

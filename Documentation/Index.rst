@@ -74,6 +74,14 @@ stored in the first place.
         ..  card-footer:: :ref:`Maintain jobs <editors>`
             :button-style: btn btn-secondary stretched-link
 
+    ..  card:: Application form
+
+        Lead the apply button to an EXT:form form and route each application to
+        the address of its job.
+
+        ..  card-footer:: :ref:`Connect a form <application-form>`
+            :button-style: btn btn-secondary stretched-link
+
     ..  card:: Tracking and statistics
 
         Views, application clicks and filter usage; the backend modules and
@@ -96,5 +104,6 @@ stored in the first place.
     Configuration/Index
     StructuredData/Index
     Editors/Index
+    ApplicationForm/Index
     Tracking/Index
     Development/Index

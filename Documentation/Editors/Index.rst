@@ -32,7 +32,7 @@ Creating a job
 ==============
 
 #.  Fill in :guilabel:`Job title`, :guilabel:`Description` and
-    :guilabel:`Published on`. These are required by Google.
+    :guilabel:`Published on`. These are required for Google.
 #.  Assign at least one :guilabel:`Location`, or tick
     :guilabel:`Fully remote` and choose the :guilabel:`Eligible countries`.
 #.  Assign a :guilabel:`Company profile`.

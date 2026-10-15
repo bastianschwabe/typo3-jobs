@@ -5,13 +5,15 @@
 
 <f:section name="Main">
     <div class="jobs-list">
-        <f:render partial="Job/Filter" arguments="{
-            demand: demand,
-            levels: levels,
-            occupationalFields: occupationalFields,
-            locations: locations,
-            employmentTypes: employmentTypes
-        }" />
+        <f:if condition="{settings.showFilter}">
+            <f:render partial="Job/Filter" arguments="{
+                demand: demand,
+                levels: levels,
+                occupationalFields: occupationalFields,
+                locations: locations,
+                employmentTypes: employmentTypes
+            }" />
+        </f:if>
 
         <f:if condition="{jobs}">
             <f:then>

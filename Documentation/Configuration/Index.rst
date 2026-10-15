@@ -25,6 +25,14 @@ All settings live in the :guilabel:`Jobs` site set and can be edited per site in
 
         Page containing the detail plugin. Used to link from the list.
 
+    ..  confval:: jobs.applicationFormPid
+        :type: int
+        :default: 0
+
+        Page containing an EXT:form application form. When set, the apply
+        button leads there instead of to the application URL or e-mail
+        address. See :ref:`application-form`.
+
     ..  confval:: jobs.itemsPerPage
         :type: int
         :default: 10

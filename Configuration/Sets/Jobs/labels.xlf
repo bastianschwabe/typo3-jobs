@@ -27,6 +27,12 @@
       <trans-unit id="settings.description.jobs.detailPid">
         <source>Page containing the detail plugin. Used to link from the list.</source>
       </trans-unit>
+      <trans-unit id="settings.jobs.applicationFormPid">
+        <source>Application form page</source>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.applicationFormPid">
+        <source>Page containing an EXT:form application form. When set, the apply button leads there instead of to the application URL or e-mail address, and the job is handed over to the form.</source>
+      </trans-unit>
       <trans-unit id="settings.jobs.itemsPerPage">
         <source>Jobs per page</source>
       </trans-unit>

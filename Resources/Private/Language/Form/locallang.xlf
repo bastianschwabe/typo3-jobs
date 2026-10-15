@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/Form/locallang.xlf" date="2026-10-14T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="element.job-application.renderingOptions.submitButtonLabel">
+        <source>Submit application</source>
+      </trans-unit>
+      <trans-unit id="job-application.finisher.EmailToSender.subject">
+        <source>Your application for {jobTitle}</source>
+      </trans-unit>
+      <trans-unit id="job-application.finisher.EmailToReceiver.subject">
+        <source>Application received: {jobTitle}</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.page-1.properties.label">
+        <source>Application</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.page-1.renderingOptions.nextButtonLabel">
+        <source>Submit</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.statictext-required.properties.text">
+        <source>Fields marked with * are required.</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.firstName.properties.label">
+        <source>First name</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.lastName.properties.label">
+        <source>Last name</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-contact.properties.label">
+        <source>How to reach you</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.phone.properties.label">
+        <source>Phone</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.email.properties.label">
+        <source>E-mail</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-position.properties.label">
+        <source>The position</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.availableFrom.properties.label">
+        <source>Available from</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.jobTitle.properties.label">
+        <source>Job title</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-documents.properties.label">
+        <source>Documents</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.resume.properties.label">
+        <source>Resume</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.uploads.properties.label">
+        <source>Further documents (optional)</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-privacy.properties.label">
+        <source>Privacy</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.contentelement-privacy.properties.label">
+        <source>Privacy policy</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.privacyAccepted.properties.label">
+        <source>Read and accepted</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.statictext-summary.properties.text">
+        <source>After clicking "Submit" you will see your entries once more for checking.</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.properties.label">
+        <source>Summary</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.renderingOptions.previousButtonLabel">
+        <source>Edit my details</source>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.renderingOptions.nextButtonLabel">
+        <source>Submit now</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

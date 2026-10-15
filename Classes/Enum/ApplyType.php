@@ -7,8 +7,8 @@ namespace BastianSchwabe\Jobs\Enum;
 /**
  * Where the "apply" proxy sent the visitor.
  *
- * FORM is reserved for an application form shipped with the extension itself;
- * nothing writes it yet.
+ * FORM is the EXT:form application form the "jobs.applicationFormPid" site
+ * setting points to.
  */
 enum ApplyType: string
 {

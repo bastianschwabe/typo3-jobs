@@ -13,6 +13,8 @@ services:
       - '../Classes/Enum/*'
       # Depends on EXT:dashboard; registered conditionally in Services.php.
       - '../Classes/Widgets/*'
+      # Depend on EXT:form; registered conditionally in Services.php.
+      - '../Classes/EventListener/Form/*'
 
   # Resolved through GeneralUtility::makeInstance() by FormEngine's
   # itemsProcFunc, which only sees public services.

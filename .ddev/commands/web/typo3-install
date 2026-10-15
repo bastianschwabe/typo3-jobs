@@ -41,6 +41,12 @@ echo "==> Setting up TYPO3"
     --project-name="TYPO3 Jobs" \
     --server-type=apache
 
+echo "==> Allowing DDEV host names"
+# TYPO3 setup does not write a trustedHostsPattern, and DDEV does not generate
+# config/system/additional.php for this layout, so the default pattern would
+# reject requests to *.ddev.site.
+.Build/bin/typo3 configuration:set SYS/trustedHostsPattern '.*\.ddev\.site'
+
 echo "==> Seeding demo content"
 .Build/bin/typo3 jobs:seed
 

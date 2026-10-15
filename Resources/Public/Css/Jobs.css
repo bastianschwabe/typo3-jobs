@@ -19,7 +19,9 @@
     --jobs-font-size: 1rem;
     --jobs-line-height: 1.55;
 
-    --jobs-color-text: #1a1a1a;
+    --jobs-color-text:      #1a1a1a;
+    --jobs-color-text-dark: #a1a1a1;
+
     --jobs-color-muted: #6b6b6b;
     --jobs-color-faint: #a3a3a3;
     --jobs-color-border: #e6e6e6;
@@ -44,7 +46,7 @@
     font-family: var(--jobs-font-family);
     font-size: var(--jobs-font-size);
     line-height: var(--jobs-line-height);
-    color: var(--jobs-color-text);
+    color: light-dark(var(--jobs-color-text), var(--jobs-color-text-dark) );
 }
 
 .jobs *,
@@ -552,7 +554,7 @@
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.02em;
-    color: var(--jobs-color-text);
+    color: light-dark(var(--jobs-color-text), #eeeeee );
     text-wrap: balance;
 }
 

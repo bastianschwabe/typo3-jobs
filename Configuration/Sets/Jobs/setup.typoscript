@@ -11,6 +11,7 @@ plugin.tx_jobs {
 
     settings {
         detailPid = {$jobs.detailPid}
+        applicationFormPid = {$jobs.applicationFormPid}
         itemsPerPage = {$jobs.itemsPerPage}
 
         # Which stylesheet the Fluid layout loads: default, basic or none.
@@ -23,4 +24,5 @@ plugin.tx_jobs {
             logo = {$jobs.organization.logo}
         }
     }
+    ignoreFlexFormSettingsIfEmpty = itemsPerPage
 }

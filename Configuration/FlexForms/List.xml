@@ -37,6 +37,13 @@
                 <sheetTitle>jobs.db:flexform.sheet.filters</sheetTitle>
                 <type>array</type>
                 <el>
+                    <settings.showFilter>
+                        <label>jobs.db:flexform.showFilter</label>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                        </config>
+                    </settings.showFilter>
                     <settings.preselect.level>
                         <label>jobs.db:flexform.preselect.level</label>
                         <config>

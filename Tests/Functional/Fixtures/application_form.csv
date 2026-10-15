@@ -1,0 +1,17 @@
+"tx_jobs_domain_model_contact"
+,"uid","pid","first_name","last_name","email","hidden","deleted","sys_language_uid","l10n_parent","sorting"
+,1,1,"Anna","Ohne-Adresse","",0,0,0,0,1
+,2,1,"Berta","Beispiel","berta@example.org",0,0,0,0,2
+"tx_jobs_domain_model_job"
+,"uid","pid","title","slug","identifier","application_email","valid_through","hidden","deleted","sys_language_uid","l10n_parent","l10n_source"
+,1,1,"With address","with-address","REF-1","jobs@example.org",\NULL,0,0,0,0,0
+,2,1,"Contact only","contact-only","",,\NULL,0,0,0,0,0
+,3,1,"Nobody","nobody","",,\NULL,0,0,0,0,0
+,4,1,"Invalid address","invalid-address","","not-an-address",\NULL,0,0,0,0,0
+,5,1,"Expired","expired","","old@example.org",1775001600,0,0,0,0,0
+,6,1,"Hidden","hidden","","hidden@example.org",\NULL,1,0,0,0,0
+"tx_jobs_job_contact_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,2,1,1,1
+,2,2,2,1
+,4,2,1,1

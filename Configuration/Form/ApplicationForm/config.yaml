@@ -1,0 +1,26 @@
+# Form set of EXT:jobs.
+#
+# EXT:form discovers every Configuration/Form/<set>/config.yaml of an active
+# extension by itself since TYPO3 v14.2; nothing is registered in TypoScript.
+# Sets are merged in ascending priority: the core set (typo3/form-base,
+# priority 10) is loaded first and everything here on top of it.
+name: bastianschwabe/jobs-application-form
+label: 'EXT:jobs — application form'
+priority: 100
+
+persistenceManager:
+  # The form definition shipped in this extension is read from here. It shows
+  # up in the form manager and can be selected in the form plugin as it is;
+  # saving to extension paths stays disabled, so it is read-only.
+  allowedExtensionPaths:
+    10: 'EXT:jobs/Resources/Private/Forms/'
+
+prototypes:
+  standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          translation:
+            translationFiles:
+              # Key 10 is the core file, registered by typo3/form-base.
+              20: 'EXT:jobs/Resources/Private/Language/Form/locallang.xlf'

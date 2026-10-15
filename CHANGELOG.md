@@ -4,6 +4,27 @@ All notable changes to this extension are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Site setting `jobs.applicationFormPid`: the apply button leads to an EXT:form
+  application form instead of the application URL or e-mail address. The job
+  is handed over as `tx_jobs_apply[job]`; the click is recorded as type `FORM`.
+- Optional EXT:form integration (only active where `typo3/cms-form` is
+  installed): the hidden element `jobUid` and the optional text element
+  `jobTitle` are pre-filled, and an email finisher with the option
+  `jobsRecipient: true` sends the application to the job's application e-mail
+  address, or to its first contact with an address, falling back to the
+  recipients of the form definition. `jobsReplyTo: true` does the same for the
+  reply-to address of the confirmation mail to the applicant.
+- Shipped example form `Resources/Private/Forms/job-application.form.yaml`,
+  registered with EXT:form through the form set
+  `Configuration/Form/ApplicationForm/config.yaml`: it is offered read-only in
+  the form manager and can be selected in the form plugin as it is. Its German
+  translation ships as `Resources/Private/Language/Form/de.locallang.xlf`, the
+  way EXT:form translates a form definition.
+
 ## [0.2.0] – 2026-09-05
 
 ### Added

@@ -1,10 +1,5 @@
-# Site settings for the development instance. The uids match the page tree that
-# "ddev typo3-install" creates.
-jobs:
-  storagePid: '4'
-  detailPid: 3
-  itemsPerPage: 5
-  organization:
-    name: 'Example Company GmbH'
-    url: 'https://www.example.org/'
-    logo: ''
+jobs.storagePid: '4'
+jobs.detailPid: 3
+jobs.itemsPerPage: 5
+jobs.organization.name: 'My Example Company GmbH'
+jobs.organization.url: 'https://www.example.org/'

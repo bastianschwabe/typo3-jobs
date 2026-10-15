@@ -35,6 +35,14 @@
         <source>Page containing the detail plugin. Used to link from the list.</source>
         <target>Seite mit dem Detail-Plugin. Wird für die Verlinkung aus der Liste genutzt.</target>
       </trans-unit>
+      <trans-unit id="settings.jobs.applicationFormPid">
+        <source>Application form page</source>
+        <target>Bewerbungsformular-Seite</target>
+      </trans-unit>
+      <trans-unit id="settings.description.jobs.applicationFormPid">
+        <source>Page containing an EXT:form application form. When set, the apply button leads there instead of to the application URL or e-mail address, and the job is handed over to the form.</source>
+        <target>Seite mit einem EXT:form-Bewerbungsformular. Ist sie gesetzt, führt der Bewerben-Button dorthin statt zur Bewerbungs-URL oder E-Mail-Adresse, und die Stelle wird an das Formular übergeben.</target>
+      </trans-unit>
       <trans-unit id="settings.jobs.itemsPerPage">
         <source>Jobs per page</source>
         <target>Jobs pro Seite</target>

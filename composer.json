@@ -58,7 +58,8 @@
         "typo3/testing-framework": "^9.2"
     },
     "suggest": {
-        "typo3/cms-dashboard": "Adds a dashboard widget with the most viewed and most applied-to jobs"
+        "typo3/cms-dashboard": "Adds a dashboard widget with the most viewed and most applied-to jobs",
+        "typo3/cms-form": "Hands a job over to an application form and sends the application to the job's address"
     },
     "autoload": {
         "psr-4": {

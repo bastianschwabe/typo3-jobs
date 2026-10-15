@@ -72,6 +72,9 @@
       <trans-unit id="flexform.sheet.filters">
         <source>Filters</source>
       </trans-unit>
+      <trans-unit id="flexform.showFilter">
+        <source>Show filter</source>
+      </trans-unit>
       <trans-unit id="flexform.sheet.general">
         <source>General</source>
       </trans-unit>
@@ -286,13 +289,13 @@
         <source>Published on</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.date_posted.description">
-        <source>Date the job was first published. Required by Google.</source>
+        <source>Date the job was first published. Required for Google.</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.description">
         <source>Description</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.description.description">
-        <source>The complete job description. Required by Google.</source>
+        <source>The complete job description. Required for Google.</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.direct_apply">
         <source>Direct application</source>
@@ -358,7 +361,7 @@
         <source>Locations</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.locations.description">
-        <source>Required by Google unless the job is fully remote.</source>
+        <source>Required for Google unless the job is fully remote.</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.occupational_category">
         <source>Occupational category</source>
@@ -418,7 +421,7 @@
         <source>Country</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_location.address_country.description">
-        <source>Required by Google as part of the job location.</source>
+        <source>Required for Google as part of the job location.</source>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_location.address_region">
         <source>Region</source>

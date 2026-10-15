@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:jobs/Resources/Private/Language/Form/locallang.xlf" date="2026-10-14T00:00:00Z" product-name="jobs">
+    <header/>
+    <body>
+      <trans-unit id="element.job-application.renderingOptions.submitButtonLabel">
+        <source>Submit application</source>
+        <target>Bewerbung absenden</target>
+      </trans-unit>
+      <trans-unit id="job-application.finisher.EmailToSender.subject">
+        <source>Your application for {jobTitle}</source>
+        <target>Ihre Bewerbung als {jobTitle}</target>
+      </trans-unit>
+      <trans-unit id="job-application.finisher.EmailToReceiver.subject">
+        <source>Application received: {jobTitle}</source>
+        <target>Online-Bewerbung eingegangen: {jobTitle}</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.page-1.properties.label">
+        <source>Application</source>
+        <target>Bewerbung</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.page-1.renderingOptions.nextButtonLabel">
+        <source>Submit</source>
+        <target>Absenden</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.statictext-required.properties.text">
+        <source>Fields marked with * are required.</source>
+        <target>Die mit * gekennzeichneten Felder sind Pflichtfelder.</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.firstName.properties.label">
+        <source>First name</source>
+        <target>Vorname</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.lastName.properties.label">
+        <source>Last name</source>
+        <target>Nachname</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-contact.properties.label">
+        <source>How to reach you</source>
+        <target>Erreichbarkeit</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.phone.properties.label">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.email.properties.label">
+        <source>E-mail</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-position.properties.label">
+        <source>The position</source>
+        <target>Die Stelle</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.availableFrom.properties.label">
+        <source>Available from</source>
+        <target>Verfügbar ab</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.jobTitle.properties.label">
+        <source>Job title</source>
+        <target>Stellenbezeichnung</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-documents.properties.label">
+        <source>Documents</source>
+        <target>Unterlagen</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.resume.properties.label">
+        <source>Resume</source>
+        <target>Lebenslauf</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.uploads.properties.label">
+        <source>Further documents (optional)</source>
+        <target>Weitere Unterlagen (optional)</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.fieldset-privacy.properties.label">
+        <source>Privacy</source>
+        <target>Datenschutz</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.contentelement-privacy.properties.label">
+        <source>Privacy policy</source>
+        <target>Datenschutzerklärung</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.privacyAccepted.properties.label">
+        <source>Read and accepted</source>
+        <target>Zur Kenntnis genommen</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.statictext-summary.properties.text">
+        <source>After clicking "Submit" you will see your entries once more for checking.</source>
+        <target>Nach dem Klick auf „Absenden“ werden Ihnen Ihre Angaben zur Kontrolle noch einmal angezeigt.</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.properties.label">
+        <source>Summary</source>
+        <target>Zusammenfassung</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.renderingOptions.previousButtonLabel">
+        <source>Edit my details</source>
+        <target>Meine Daten bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="job-application.element.summarypage-1.renderingOptions.nextButtonLabel">
+        <source>Submit now</source>
+        <target>Jetzt absenden</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

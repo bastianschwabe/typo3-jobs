@@ -14,6 +14,7 @@ use BastianSchwabe\Jobs\Domain\Repository\LocationRepository;
 use BastianSchwabe\Jobs\Domain\Repository\OccupationalFieldRepository;
 use BastianSchwabe\Jobs\Enum\ApplyType;
 use BastianSchwabe\Jobs\Enum\EmploymentType;
+use BastianSchwabe\Jobs\Service\ApplicationFormResolver;
 use BastianSchwabe\Jobs\Service\JobPostingSchemaBuilder;
 use BastianSchwabe\Jobs\Service\Tracking\SessionHashResolver;
 use BastianSchwabe\Jobs\Service\Tracking\TrackingService;
@@ -119,7 +120,8 @@ class JobController extends ActionController
 
     /**
      * Proxy in front of the application target: records the click, then sends
-     * the visitor on to the job's application URL or e-mail address.
+     * the visitor on to the application form, or without one to the job's
+     * application URL or e-mail address.
      *
      * Registered as non-cacheable, so every click reaches this action even
      * though the surrounding page is cached.
@@ -153,6 +155,11 @@ class JobController extends ActionController
      */
     protected function resolveApplicationTarget(Job $job): ?array
     {
+        $formPid = (int)($this->settings['applicationFormPid'] ?? 0);
+        if ($formPid > 0) {
+            return [ApplyType::Form, $this->buildApplicationFormUrl($formPid, $job)];
+        }
+
         if ($job->getApplicationUrl() !== '') {
             $contentObject = $this->request->getAttribute('currentContentObject');
             $uri = $contentObject instanceof ContentObjectRenderer
@@ -246,6 +253,20 @@ class JobController extends ActionController
         // absRefPrefix can still hand back a site-relative URI, but schema.org
         // consumers need an absolute one.
         return $this->makeAbsolute($uri, $this->request->getAttribute('normalizedParams')?->getSiteUrl() ?? '');
+    }
+
+    /**
+     * The form page receives the job as a plain uid; title and recipient are
+     * resolved on the server when the form is rendered and sent.
+     */
+    protected function buildApplicationFormUrl(int $formPid, Job $job): string
+    {
+        return $this->uriBuilder
+            ->reset()
+            ->setTargetPageUid($formPid)
+            ->setCreateAbsoluteUri(true)
+            ->setArguments([ApplicationFormResolver::REQUEST_ARGUMENT => ['job' => $job->getUid()]])
+            ->build();
     }
 
     protected function resolveOrganizationLogoUrl(Job $job): string

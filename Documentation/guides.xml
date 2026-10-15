@@ -8,6 +8,7 @@
                project-issues="https://github.com/bastianschwabe/typo3-jobs/issues"
                edit-on-github="bastianschwabe/typo3-jobs"
                edit-on-github-branch="main"
+               interlink-shortcode="bastianschwabe/jobs"
                typo3-core-preferred="stable" />
     <project title="Jobs" version="0.2" release="0.2.0" copyright="Bastian Schwabe" />
     <inventory id="t3coreapi" url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/" />

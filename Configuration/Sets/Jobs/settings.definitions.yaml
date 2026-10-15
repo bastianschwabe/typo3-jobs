@@ -14,6 +14,10 @@ settings:
     type: int
     default: 0
     category: jobs
+  jobs.applicationFormPid:
+    type: int
+    default: 0
+    category: jobs
   jobs.itemsPerPage:
     type: int
     default: 10

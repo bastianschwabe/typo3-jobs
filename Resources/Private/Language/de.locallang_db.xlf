@@ -95,6 +95,10 @@
         <source>Filters</source>
         <target>Filter</target>
       </trans-unit>
+      <trans-unit id="flexform.showFilter">
+        <source>Show filter</source>
+        <target>Filter anzeigen</target>
+      </trans-unit>
       <trans-unit id="flexform.sheet.general">
         <source>General</source>
         <target>Allgemein</target>
@@ -236,8 +240,8 @@
         <target>Logo</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_company_profile.logo.description">
-        <source>Recommended by Google, shown next to the job listing.</source>
-        <target>Von Google empfohlen, erscheint neben der Stellenanzeige.</target>
+        <source>Recommended for Google, shown next to the job listing.</source>
+        <target>Für Google empfohlen, erscheint neben der Stellenanzeige.</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_company_profile.number_of_employees">
         <source>Number of employees</source>
@@ -380,16 +384,16 @@
         <target>Datum</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.date_posted.description">
-        <source>Date the job was first published. Required by Google.</source>
-        <target>Datum der Erstveröffentlichung. Von Google verlangt.</target>
+        <source>Date the job was first published. Required for Google.</source>
+        <target>Datum der Erstveröffentlichung. Wird für Google benötigt.</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.description">
         <source>Description</source>
         <target>Beschreibung</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.description.description">
-        <source>The complete job description. Required by Google.</source>
-        <target>Die vollständige Stellenbeschreibung. Von Google verlangt.</target>
+        <source>The complete job description. Required for Google.</source>
+        <target>Die vollständige Stellenbeschreibung. Wird für Google benötigt.</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.direct_apply">
         <source>Direct application</source>
@@ -476,8 +480,8 @@
         <target>Standorte</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.locations.description">
-        <source>Required by Google unless the job is fully remote.</source>
-        <target>Von Google verlangt, außer die Stelle ist vollständig remote.</target>
+        <source>Required for Google unless the job is fully remote.</source>
+        <target>Wird für Google benötigt, außer die Stelle ist vollständig remote.</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_job.occupational_category">
         <source>Occupational category</source>
@@ -556,8 +560,8 @@
         <target>Land</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_location.address_country.description">
-        <source>Required by Google as part of the job location.</source>
-        <target>Von Google als Teil des Arbeitsorts verlangt.</target>
+        <source>Required for Google as part of the job location.</source>
+        <target>Für Google benötigt als Teil des Arbeitsorts.</target>
       </trans-unit>
       <trans-unit id="tx_jobs_domain_model_location.address_region">
         <source>Region</source>
